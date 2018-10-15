@@ -1,0 +1,2 @@
+class RelationshopsController < ApplicationController
+end
