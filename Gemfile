@@ -6,6 +6,7 @@ ruby '2.4.2'
 gem "devise"
 gem "refile", require: "refile/rails", github: "manfe/refile"
 gem "refile-mini_magick"
+gem "webpacker"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
