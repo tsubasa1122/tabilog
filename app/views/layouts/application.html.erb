@@ -7,12 +7,46 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "//maps.google.com/maps/api/js?v=3.23" %>
+    <%= javascript_include_tag "//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js" %>
+    <%= javascript_include_tag '//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' %>
+    <%= javascript_include_tag '/javascripts/gmaps_google.js' %>
+
   </head>
 
   <body>
   <header>
-    <div class=""
+    <div class="header__menu clearfix">
+      <h1 class="header__logo"><%= link_to image_tag("logo.png"), root_path  %></h1>
+      <nav class="header__nav">
+        <ul>
+          <% if user_signed_in? %>
+            <li>お知らせ</li>
+            <li>プロフィール画像</li>
+            <li>投稿</li>
+            <%= link_to  destroy_user_session_path ,method: :delete do %>
+              <li><span class="sign-up__btn">ログアウト</span></li>
+            <% end %>
+          <% else %>
+            <%= link_to about_path do %>
+              <li>たびろぐについて</li>
+            <% end %>
+            <%= link_to new_user_session_path do %>
+              <li>ログイン</li>
+            <% end %>
+            <%= link_to new_user_registration_path do %>
+              <li><span class="sign-up__btn">新規登録</span></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </nav>
+
+    </div>
   </header>
     <%= yield %>
+
+  <footer>
+    <p class="footer__copyright">Copyright (C) tabilog, Inc. All Rights Reserved.</p>
+  </footer>
   </body>
 </html>

@@ -1,0 +1,275 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//sign-in
+
+.register-container{
+  width: 360px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: rgba(0,0,0,1) 0px 0px 1px 0px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  .sign-in__title{
+    margin-bottom: 30px;
+    font-size: 1.375rem;
+    font-weight: bold;
+    line-height: 1.3;
+  }
+  .field{
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  .field label{
+    font-size: 0.85rem;
+  }
+  .field input{
+    width: 100%;
+    border: 1px solid #e1e5e7;
+    height: 31px;
+    padding: 5px 10px;
+    vertical-align: middle;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 100;
+  }
+  .actions input{
+    width: 100%;
+    background-color: #32E5FF;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 5px;
+  }
+}
+
+
+//sign-in
+
+.session-container{
+  width: 360px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: rgba(0,0,0,1) 0px 0px 1px 0px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  .sign-in__title{
+    margin-bottom: 30px;
+    font-size: 1.375rem;
+    font-weight: bold;
+    line-height: 1.3;
+  }
+  .field{
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  .field label{
+    font-size: 0.85rem;
+  }
+  .field input{
+    width: 100%;
+    border: 1px solid #e1e5e7;
+    height: 31px;
+    padding: 5px 10px;
+    vertical-align: middle;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 100;
+  }
+  .actions input{
+    width: 100%;
+    background-color: #32E5FF;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 5px;
+  }
+}
+
+//パスワード再発行ページ
+
+.re-session-container{
+  width: 360px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: rgba(0,0,0,1) 0px 0px 1px 0px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  .re-session__title__title{
+    margin-bottom: 30px;
+    font-size: 1.375rem;
+    font-weight: bold;
+    line-height: 1.3;
+  }
+  .field{
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  .field label{
+    font-size: 0.85rem;
+  }
+  .field input{
+    width: 100%;
+    border: 1px solid #e1e5e7;
+    height: 31px;
+    padding: 5px 10px;
+    vertical-align: middle;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 100;
+  }
+  .actions input{
+    width: 100%;
+    background-color: #32E5FF;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 5px;
+  }
+}
+
+
+
+//ユーザーページ
+
+.profile-contents{
+  padding-top: 48px;
+  padding-bottom: 48px;
+  display: block;
+  width: 75%;
+  box-sizing: border-box;
+  margin: 0 auto;
+
+  .profile-content{
+    position: relative;
+    width: 100%;
+    .username{
+      position: relative;
+      padding-left: 128px;
+      width: 100%;
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      align-items: center;
+      margin-bottom: 8px;
+      & h1{
+        font-size: 1.375rem;
+        line-height: 1.5;
+      }
+
+    }
+    .user__img{
+      position: absolute;
+      left: 0px;
+      top: -16px;
+      width: 104px;
+      z-index: 2;
+      cursor: pointer;
+      overflow: visible;
+    }
+    .profile{
+      font-size: 0.875rem;
+      line-height: 1.5;
+      font-weight: normal;
+      margin-bottom: 16px;
+      padding-left: 128px;
+      text-align: left;
+    }
+    .follow__status{
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      padding-left: 128px;
+      margin-top: 8px;
+      .follow{
+        margin-right: 8px;
+        .follow__num{
+          font-size: 1rem;
+          line-height: 1.5;
+          font-weight: bold;
+        }
+        .follow__text {
+          line-height: 1.5;
+          color: #666666;
+        }
+      }
+      .follower{
+        margin-left: 8px;
+        .follower__num{
+          font-size: 1rem;
+          line-height: 1.5;
+          font-weight: bold;
+        }
+        .follower__text{
+          line-height: 1.5;
+          color: #666666;
+        }
+      }
+    }
+  }
+
+
+}
+.profile-contents img{
+  overflow: hidden;
+  border-radius: 50%;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+}
+
+//メニュー
+
+.menu{
+  width: 100%;
+  .menu-inner{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 75%;
+    margin: 0px auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    .menu-nav{
+      -webkit-box-flex: 1;
+      position: relative;
+      height: 67px;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      flex: 110%;
+      .menu-ul{
+        display: flex;
+        .menu-list{
+          display: block;
+          font-size: 1rem;
+          padding: 24px 20px 22px;
+          border-bottom: 2px solid transparent;
+        }
+      }
+    }
+  }
+}
+
+.menu-list:active{
+  font-weight: bold;
+  color: rgb(34, 34, 34);
+  border-bottom: 2px solid rgb(34, 34, 34);
+}

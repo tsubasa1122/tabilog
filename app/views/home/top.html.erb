@@ -1,2 +1,124 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+
+<div class="main clear-node">
+    <div class="main__images">
+      <div class="main__image"><%= image_tag 'carshare501IMGL2465_TP_V4 .jpg', :width=>'100%', :height=>'488px' %></div>
+      <h1 class="main__text">
+        たいせつな人と過ごす<br>満足のゆく時間を。
+      </h1>
+    </div>
+</div>
+<div class="main-contents">
+  <div class="search clearfix">
+    <div class="search-bar"></div>
+    <div class="search-box">
+      <h2 class="search-area__title">全国のエリアから探す</h2>
+      <div class="area-selector__regions">
+        <section class="area-selector__region">
+          <h3 class="area-selector__region-name">関東</h3>
+          <ul class="area-selector__areas">
+            <li class="area-selector__area">東京</li>
+            <li class="area-selector__area">神奈川</li>
+            <li class="area-selector__area">埼玉</li>
+            <li class="area-selector__area">千葉</li>
+            <li class="area-selector__area">栃木</li>
+            <li class="area-selector__area">茨城</li>
+            <li class="area-selector__area">群馬</li>
+          </ul>
+        </section>
+        <section class="area-selector__region">
+          <h3 class="area-selector__region-name">関西</h3>
+          <ul class="area-selector__areas">
+            <li class="area-selector__area">大阪</li>
+            <li class="area-selector__area">兵庫</li>
+            <li class="area-selector__area">京都</li>
+            <li class="area-selector__area">滋賀</li>
+            <li class="area-selector__area">奈良</li>
+            <li class="area-selector__area">和歌山</li>
+          </ul>
+        </section>
+        <section class="area-selector__region">
+          <h3 class="area-selector__region-name">九州・沖縄</h3>
+          <ul class="area-selector__areas">
+            <li class="area-selector__area">福岡</li>
+            <li class="area-selector__area">佐賀</li>
+            <li class="area-selector__area">長崎</li>
+            <li class="area-selector__area">熊本</li>
+            <li class="area-selector__area">大分</li>
+            <li class="area-selector__area">宮崎</li>
+            <li class="area-selector__area">鹿児島</li>
+            <li class="area-selector__area">沖縄</li>
+          </ul>
+        </section>
+        <section class="area-selector__region">
+          <h3 class="area-selector__region-name">北海道・東北</h3>
+          <ul class="area-selector__areas">
+            <li class="area-selector__area">北海道</li>
+            <li class="area-selector__area">青森</li>
+            <li class="area-selector__area">秋田</li>
+            <li class="area-selector__area">山形</li>
+            <li class="area-selector__area">岩手</li>
+            <li class="area-selector__area">宮崎</li>
+            <li class="area-selector__area">福島</li>
+          </ul>
+        </section>
+        <section class="area-selector__region">
+          <h3 class="area-selector__region-name">東海</h3>
+          <ul class="area-selector__areas">
+            <li class="area-selector__area">愛知</li>
+            <li class="area-selector__area">岐阜</li>
+            <li class="area-selector__area">静岡</li>
+            <li class="area-selector__area">三重</li>
+          </ul>
+        </section>
+        <section class="area-selector__region">
+          <h3 class="area-selector__region-name">中国・四国</h3>
+          <ul class="area-selector__areas">
+            <li class="area-selector__area">岡山</li>
+            <li class="area-selector__area">広島</li>
+            <li class="area-selector__area">鳥取</li>
+            <li class="area-selector__area">島根</li>
+            <li class="area-selector__area">山口</li>
+            <li class="area-selector__area">香川</li>
+            <li class="area-selector__area">徳島</li>
+            <li class="area-selector__area">愛媛</li>
+            <li class="area-selector__area">高知</li>
+          </ul>
+        </section>
+        <section class="area-selector__region">
+          <h3 class="area-selector__region-name">甲信越・北陸</h3>
+          <ul class="area-selector__areas">
+            <li class="area-selector__area">山梨</li>
+            <li class="area-selector__area">長野</li>
+            <li class="area-selector__area">新潟</li>
+            <li class="area-selector__area">富山</li>
+            <li class="area-selector__area">石川</li>
+            <li class="area-selector__area">福井</li>
+          </ul>
+        </section>
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="new-arrivals">
+    <h1 class="content__title">新着の口コミ</h1>
+   <div id="#map"(style="width: 100% ,height: 200px" )>
+  </div>
+
+
+  </div>
+</div>
+<script>
+    handler = Gmaps.build('Google');
+    handler.buildMap({
+        provider: {
+            zoom: 12,
+            center:    new google.maps.LatLng(#{@user.latitude}, #{@user.longitude}),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        },
+        internal: {id: 'map'}}, function(){
+        handler.fitMapToBounds();
+    });
+</script>

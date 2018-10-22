@@ -1,3 +1,59 @@
 // Place all the styles related to the trips controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.title__box{
+  width: 75%;
+  height: 30px;
+  margin: 0 auto;
+  .area__title{
+    float: left;
+    font-size: 1.75rem;
+    margin-top: 15px;
+  }
+}
+
+.trips{
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 24px auto 0;
+  width: 75%;
+  .trip {
+    border: solid 1px #e0e2e3;
+    border-radius: 15px;
+    padding-bottom: 24px;
+    width: 23%;
+    height: 375px;
+    box-sizing: border-box;
+    float: left;
+    text-align: left;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    transition: all 0.3s;
+    &__text {
+      padding: 15px 0 10px;
+      padding-left: 5px;
+      .place__name {
+        font-size: 1.15rem;
+        font-weight: bold;
+        letter-spacing: 3px;
+
+      }
+      .place__detail {
+        font-size: 0.2rem;
+        font-weight: normal;
+        letter-spacing: 1px;
+        line-height: 1;
+        color: #999999;
+      }
+    }
+  }
+  .trip img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 100%;
+  }
+}
+.trip:hover{
+  box-shadow: 6px 6px 6px 1px rgba(141,147,150,0.3);
+}

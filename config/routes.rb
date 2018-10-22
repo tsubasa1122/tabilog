@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'home#top'
   get '/about' => "home#about"
 
@@ -6,7 +7,10 @@ Rails.application.routes.draw do
       sessions:      'users/sessions',
       passwords:     'users/passwords',
       registrations: 'users/registrations'
-  }
+  }, path: "", path_names: { sign_in: "login", sign_out: "logout", password: "reset_password", }
+
+
+  resources :users, only: [:show, :index]
   resources :favorites, only: [:create, :show, :destroy ]
   resources :trips, only: [:new, :create, :index, :show, :edit, :update, :destroy]
   resources :relationships, only: [:create, :destroy]
