@@ -9,6 +9,8 @@ gem "refile-mini_magick"
 gem "webpacker"
 gem "gmaps4rails"
 gem "geocoder"
+gem 'paranoia', '~> 2.3', '>= 2.3.1'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'

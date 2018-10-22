@@ -1,0 +1,48 @@
+<div class="form-form">
+  <h5 class="sign_up_message">会員情報を編集します。下記フォームに登録内容をご記入の上、画面下部の『登録』を押して下さい。</h5><br><br>
+
+  <%= form_for(@user) do |f| %>
+    <div class="form-group">
+      <%= f.label :header_image, "ヘッダー画像", class: "" %>
+      <div class="col-sm-7">
+        <%=  f.attachment_field :header_image, class: "file col-sm-7" %>
+      </div>
+    </div>
+
+    　<div class="form-group">
+  <%= f.label :name, "名前", class: "col-sm-3  control-label" %>
+  <div class="col-sm-8">
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ニックネーム", class: "form-control" %>
+  </div>
+</div>
+
+
+    <div class="form-group">
+      <%= f.label :email, "メールアドレス", class: "col-sm-3 control-label" %>
+      <div class="col-sm-8">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description, "自己紹介", class: "col-sm-3 control-label" %>
+      <div class="col-sm-8">
+        <%= f.text_area :description,class: "col-sm-7 form-control",placeholder: "あなたの自己紹介を書きましょう140文字以内" %>
+      </div>
+    </div>
+
+    <div class="form-grouo">
+      <%= f.label :user_image, "プロフィール画像", class: "col-sm-2 file2" %>
+      <div class="col-sm-8">
+        <%=  f.attachment_field :user_image, class: "col-sm-8 file2" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit "登録", class: "sign_up_btn" %>
+      </div>
+    </div>
+
+  <% end %>
+</div>

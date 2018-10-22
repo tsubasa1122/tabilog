@@ -7,4 +7,10 @@ class User < ApplicationRecord
   validates :name ,uniqueness: true
   validates :name ,length: {maximum: 36}
   validates :name ,presence: true
+  validates :description , length: {maximum: 140}
+
+  #　画像投稿
+
+  attachment :user_image
+  attachment :header_image
 end

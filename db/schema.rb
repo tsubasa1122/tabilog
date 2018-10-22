@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 2018_10_15_105517) do
     t.string "name"
     t.string "user_image_id"
     t.string "header_image_id"
+    t.string "description"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
