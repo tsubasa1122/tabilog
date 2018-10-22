@@ -7,6 +7,7 @@ class CreateTrips < ActiveRecord::Migration[5.2]
       t.integer :category_id
       t.float :latitude
       t.float :longitude
+      t.datetime :deleted_at
 
       t.timestamps
     end

@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2018_10_15_105517) do
     t.integer "category_id"
     t.float "latitude"
     t.float "longitude"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
