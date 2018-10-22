@@ -3,7 +3,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def index
+  def followings
+
+  end
+
+  def follwers
+
   end
 
   def edit

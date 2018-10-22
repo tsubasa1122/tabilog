@@ -27,7 +27,7 @@
 }
 
 .main-contents{
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   height: 900px;
 
@@ -113,7 +113,7 @@
     left: 38%;
   }
   .detail{
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     &__text{
       font-size: 1rem;
@@ -124,7 +124,7 @@
   }
   .feature{
     display: flex;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     padding-top: 40px;
     padding-bottom: 80px;

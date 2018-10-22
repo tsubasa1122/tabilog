@@ -10,7 +10,13 @@ Rails.application.routes.draw do
   }, path: "", path_names: { sign_in: "login", sign_out: "logout", password: "reset_password", }
 
 
-  resources :users, only: [:show, :index, :edit, :update, :destroy]
+  resources :users, only: [:show, :edit, :update, :destroy] do
+    member do
+      get "followings"
+      get "followers"
+    end
+  end
+
   resources :favorites, only: [:create, :show, :destroy ]
   resources :trips, only: [:new, :create, :index, :show, :edit, :update, :destroy]
   resources :relationships, only: [:create, :destroy]

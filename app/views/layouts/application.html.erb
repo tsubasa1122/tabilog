@@ -21,12 +21,13 @@
       <nav class="header__nav">
         <ul>
           <% if user_signed_in? %>
-            <li>お知らせ</li>
-            <li>プロフィール画像</li>
+            <li><%= image_tag "notification.png" ,:width => "25px" , :height => "25px"  %></li>
+            <li><%= attachment_image_tag @user, :user_image, :fill, 43,43 ,  class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%></li>
             <li>投稿</li>
             <%= link_to  destroy_user_session_path ,method: :delete do %>
               <li><span class="sign-up__btn">ログアウト</span></li>
             <% end %>
+
           <% else %>
             <%= link_to about_path do %>
               <li>たびろぐについて</li>

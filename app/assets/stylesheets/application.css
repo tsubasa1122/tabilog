@@ -322,7 +322,7 @@ header{
 }
 
 .header__menu{
-    width: 940px;
+    width: 80%;
     height: 64px;
     margin: 0 auto;
 }
@@ -341,6 +341,9 @@ header{
 }
 .header__nav li{
     margin-left: 20px;
+}
+.header__nav img{
+    border-radius: 43px;
 }
 .header__nav li:nth-last-child{
     border-color: #32E5FF;
