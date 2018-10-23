@@ -8,6 +8,8 @@ class CreateTrips < ActiveRecord::Migration[5.2]
       t.float :latitude
       t.float :longitude
       t.datetime :deleted_at
+      t.integer :business_hours
+      t.string :regular_holiday
 
       t.timestamps
     end

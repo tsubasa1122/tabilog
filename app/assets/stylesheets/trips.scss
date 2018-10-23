@@ -57,3 +57,60 @@
 .trip:hover{
   box-shadow: 6px 6px 6px 1px rgba(141,147,150,0.3);
 }
+
+
+
+
+//詳細画面
+
+.content{
+  width: 60%;
+  margin: 0 auto;
+  .content__title{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: #2e2e3b;
+    font-size: 1.38462rem;
+    font-weight: bold;
+    padding: 0 0 12px;
+    border-bottom: 1px solid #d5d5d8;
+
+  }
+  .content__table{
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    box-sizing: border-box;
+    border: 1px solid #eaeaeb;
+    padding: 8px 16px;
+    background-color: #fafafa;
+    .table__title{
+      flex: 0 0 180px;
+      display: flex;
+      align-items: center;
+      padding: 16px 8px;
+      color: #2e2e3b;
+      font-weight: bold;
+      box-sizing: border-box;
+    }
+    .table__body{
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-basis: calc(100% - 212px);
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 16px 8px;
+      min-height: 80px;
+      color: #4a4a4b;
+    }
+  }
+}
+.table__title:not(:last-of-type){
+  border-bottom: 1px solid #eaeaeb;
+}
+.table__body:not(:last-of-type){
+  border-bottom: 1px solid #eaeaeb;
+}

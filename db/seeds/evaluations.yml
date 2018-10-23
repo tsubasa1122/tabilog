@@ -1,15 +1,11 @@
-
-
 evaluations:
   -
     evaluation_name: "快適さ"
-
   -
     evaluation_name: "賑わい"
 
   -
     evaluation_name: "落ち着き"
-
   -
     evaluation_name: "おしゃれ"
 

@@ -13,4 +13,9 @@ class User < ApplicationRecord
 
   attachment :user_image
   attachment :header_image
+
+  #アソシエーション
+  has_many :favorites, dependent: :destroy
+  has_many :reviews, dependent: :destroy
+  has_many :wannagos, dependent: :destroy
 end

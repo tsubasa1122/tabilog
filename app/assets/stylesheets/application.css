@@ -342,7 +342,9 @@ header{
 .header__nav li{
     margin-left: 20px;
 }
-.header__nav img{
+.img-circle{
+    width: 40px;
+    height: 40px;
     border-radius: 43px;
 }
 .header__nav li:nth-last-child{
