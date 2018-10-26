@@ -39,14 +39,16 @@
         font-size: 1.15rem;
         font-weight: bold;
         letter-spacing: 3px;
+        word-wrap: break-word;
 
       }
       .place__detail {
-        font-size: 0.2rem;
+        font-size: 1rem;
         font-weight: normal;
         letter-spacing: 1px;
         line-height: 1;
         color: #999999;
+        word-wrap: break-word;
       }
     }
     .wannago {

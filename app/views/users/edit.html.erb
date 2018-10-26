@@ -5,8 +5,12 @@
       <%=  f.attachment_field :header_image, class: "header__imege" %>
     </div>
     <div class="form">
-      <%= f.label :name, "名前" %>
+      <%= f.label :name, "ニックネーム" %>
       <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ニックネーム" %>
+    </div>
+    <div class="form">
+      <%= f.label :account_name, "アカウント名" %>
+      <%= f.text_field :account_name, autofocus: true, autocomplete: "account_name", placeholder: "アカウント名" %>
     </div>
     <div class="form">
       <%= f.label :email, "メールアドレス" %>

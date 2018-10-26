@@ -10,6 +10,11 @@
     </div>
 
     <div class="field">
+      <%= f.label :account_name , :アカウント名（登録後に変更可能） %><br>
+      <%= f.text_field :account_name, autofocus: true, autocomplete: "account_name", placeholder:"例：tabilog1122(半角英数字) " %>
+    </div>
+
+    <div class="field">
       <%= f.label :email, :"メールアドレス" %><br>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"例：mail@tabilog.com" %>
     </div>
@@ -20,7 +25,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation , :パスワード再入力） %><br>
+      <%= f.label :password_confirmation , :パスワード（再入力） %><br>
       <%= f.password_field :password_confirmation, autocomplete: "new-password",  placeholder: "例：6文字以上の半角英数" %>
     </div>
 

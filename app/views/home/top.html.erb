@@ -95,30 +95,43 @@
             <li class="area-selector__area">福井</li>
           </ul>
         </section>
-
-
       </div>
     </div>
-
   </div>
-
   <div class="new-arrivals">
     <h1 class="content__title">新着の口コミ</h1>
    <div id="#map"(style="width: 100% ,height: 200px" )>
   </div>
-
-
   </div>
 </div>
-<script>
-    handler = Gmaps.build('Google');
-    handler.buildMap({
-        provider: {
-            zoom: 12,
-            center:    new google.maps.LatLng(#{@user.latitude}, #{@user.longitude}),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        },
-        internal: {id: 'map'}}, function(){
-        handler.fitMapToBounds();
-    });
-</script>
+
+
+
+
+<div class="search">
+  <form action="<%= trips_path('aa') %>" method="get" class="form-inline">
+    <input type="text" id="search__bar" name="s_title" required size="10" placeholder=" 商品名やアーティスト名で検索" value="<%= request[:s_title] %>">
+    <button  class="search__box" type="submit">
+      <span class="search__box__txt" ><%= image_tag "search.png", alt:"" %> 検索</span>
+    </button>
+  </form>
+</div>
+
+
+<div class="sidebar">
+  <div class="genre">
+    <div class="genre__title__box">
+      <span ><%= image_tag "music.png" ,alt:"" ,class:"genre__title__img" %></span>
+      <span class="genre__title">ジャンル</span>
+    </div>
+    <% genres.each do |genre| %>
+      <%= link_to user_products_path(genre.id) do %>
+        <div class="genre__box clearfix">
+          <span class="genre__name__img"><%= image_tag "disc.png" ,alt:"" ,class: "" %></span>
+          <span class="genre__name"><%= genre.genre_name %></span>
+          <span class="genre__arrow"><%= image_tag "genre-arrow.png", alt:"" ,class: "" %></span>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+

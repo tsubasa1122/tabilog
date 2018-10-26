@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_101029) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.string "name"
+    t.string "account_name"
     t.string "user_image_id"
     t.string "header_image_id"
     t.string "description"
