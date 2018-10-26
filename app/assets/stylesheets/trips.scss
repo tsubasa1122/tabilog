@@ -162,11 +162,17 @@ hr{
   .place__detail{
     text-align: left;
     margin-top: 12px;
-    line-height: 1.25;
+    line-height: 2;
     font-size: 1.25rem;
     letter-spacing: 1.8px;
     word-wrap: break-word;
   }
+}
+.trip-img img{
+  width: 800px;
+  height: 500px;
+  margin-bottom: 10px;
+
 }
 
 //口コミ

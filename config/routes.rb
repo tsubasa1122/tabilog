@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   root 'home#top'
   get '/about' => "home#about"
-  get '/trips/:id' => 'trips#index', as: 'trips'
 
 
   devise_for :users, controllers: {
