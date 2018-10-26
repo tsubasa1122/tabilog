@@ -1,29 +1,81 @@
 
 <div class="trip-content">
-  <div class="trip-summary">
+  <section class="trip-summary">
     <div class="trip-summary__content">
-      <h1 class="place__title">テストテストテスト</h1>
-      <div class="trip-summary__popularity"></div>
+      <h1 class="place__title"><%= @trip.place_name %></h1>
+      <div class="trip-summary__popularity"><%= image_tag "BE107FAC-D706-48DF-912B-4BD2C11B41F7.jpg" %>人がオススメしています</div>
     </div>
     <div class="trip-summary__actions">
-      <button class="favorite">お気に入り</button>
-      <button class="review">投稿</button>
+      <button class="wannago"><%= image_tag "wannago.png" %>行きたい</button>
+      <button class="contribution"><%= image_tag "contribution.png" %>投稿</button>
     </div>
-  </div>
+  </section>
+  <hr>
+  <section class="trip-img">
+    <% @images.each do |image| %>
+       <%= attachment_image_tag image ,:trip_image  %>
+    <% end %>
 
-  <div class="content">
-    <h2 class="content__title">〜の情報</h2>
+    <p class="place__detail"><%= @trip.place_detail %></p>
+  </section>
+
+
+  <section class="reviews">
+    <h2 class="review__title">口コミ（）</h2>
+    <div class="review">
+      <div class="review__user__box">
+        <%= image_tag "BE107FAC-D706-48DF-912B-4BD2C11B41F7.jpg" %>
+        <div class="user__detail">
+          <p class="user__name">なかの</p>
+          <span class="evaluation__name">快適さ</span>
+          <span class="evaluation__num">星3つ</span>
+        </div>
+      </div>
+      <div class="trip__date">
+        <span class="trip__month">10月</span>
+        <span class="trip__time">朝</span>
+      </div>
+      <p class="review__text">テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</p>
+      <div class="review__image">
+        <%= image_tag "BE107FAC-D706-48DF-912B-4BD2C11B41F7.jpg" %>
+      </div>
+      <span class="review__date">2018年xx月xx日</span>
+      <button class="favorite"><%= image_tag "favorite.png" %>お気に入り</button>
+    </div>
+    <button class="more">もっとみる</button>
+  </section>
+
+  <section class="content">
+    <h2 class="content__title"><%= @trip.place_name %>の情報</h2>
     <dl class="content__table">
-      <dt class="table__title">カテゴリー</dt>
-      <dd class="table__body">カテゴリー</dd>
-      <dt class="table__title">営業時間</dt>
-      <dd class="table__body">営業時間</dd>
-      <dt class="table__title">定休日</dt>
-      <dd class="table__body">定休日</dd>
-      <dt class="table__title">電話番号</dt>
-      <dd class="table__body">電話番号</dd>
-      <dt class="table__title">アクセス</dt>
-      <dd class="table__body">アクセス</dd>
+      <dt class="table__title"><%= image_tag "category.png" %>カテゴリー</dt>
+      <dd class="table__body"><%= @trip.category.category_name %></dd>
+      <dt class="table__title"><%= image_tag "time.png" %>営業時間</dt>
+      <dd class="table__body"><%= @trip.start_time.hour %>時 〜 <%= @trip.end_time.hour %>時</dd>
+      <dt class="table__title"><%= image_tag "close.png" %>定休日</dt>
+      <dd class="table__body"><%= @trip.regular_holiday %></dd>
+      <dt class="table__title"><%= image_tag "telephone.png" %>電話番号</dt>
+      <dd class="table__body"><%= @trip.telephone_number %></dd>
+      <dt class="table__title"><%= image_tag "location.png" %>アクセス</dt>
+      <dd class="table__body"><div id="map" style='width: 100%; height: 400px;'></div></dd>
     </dl>
-  </div>
+  </section>
 </div>
+
+
+
+<script type="text/javascript">
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: { scrollwheel: false }, internal: {id: 'map'}}, function(){
+        markers = handler.addMarkers([
+            {
+                "lat": <%= @trip.latitude %>,
+                "lng": <%= @trip.longitude %>,
+                "infowindow": '<p></p><p><%= @trip.address %></p><p><%= link_to "Googleマップで見る" ,"https://maps.google.co.jp/maps?q=loc:#{@trip.latitude},#{@trip.longitude}&iwloc=J",target: "_blank" %></p>'
+            }
+        ]);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        handler.getMap().setZoom(17);
+    });
+</script>

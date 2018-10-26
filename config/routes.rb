@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   end
 
   resources :favorites, only: [:create, :show, :destroy ]
-  resources :trips, only: [:new, :create, :index, :show, :edit, :update, :destroy]
+  resources :trips, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
+    resource :review
+  end
   resources :relationships, only: [:create, :destroy]
   resources :reviews, only: [:new, :index, :show, :create, :edit, :update, :destroy]
 

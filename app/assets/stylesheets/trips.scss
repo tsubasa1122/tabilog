@@ -1,8 +1,10 @@
 // Place all the styles related to the trips controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//indexページ
 .title__box{
-  width: 75%;
+  width: 80%;
   height: 30px;
   margin: 0 auto;
   .area__title{
@@ -17,13 +19,13 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 24px auto 0;
-  width: 75%;
+  width: 80%;
   .trip {
     border: solid 1px #e0e2e3;
     border-radius: 15px;
     padding-bottom: 24px;
     width: 23%;
-    height: 375px;
+    height: 400px;
     box-sizing: border-box;
     float: left;
     text-align: left;
@@ -47,8 +49,22 @@
         color: #999999;
       }
     }
+    .wannago {
+      border-color: #d5d5d8;
+      color: #6c6c75;
+      background-color: #ffffff;
+      padding: 5px 17px;
+      border-radius: 4px;
+      margin: 10px 0px 0 65px;
+    }
+    .wannago img{
+      margin-right: 5px;
+      margin-bottom: 4px;
+      width: 16px;
+      height: 16px;
+    }
   }
-  .trip img {
+  .trip__img img {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     width: 100%;
@@ -61,17 +77,196 @@
 
 
 
-//詳細画面
+//showページ
 
-.content{
-  width: 60%;
+//メインタイトル
+.trip-summary{
+  display: flex;
+  align-items: flex-start;
+  width: 80%;
+  margin: 10px auto 0;
+  &__content{
+    flex: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-top: 45px;
+    .place__title{
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .trip-summary__popularity{
+      margin-top: 15px;
+    }
+  }
+  &__actions{
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 12px;
+    background-color: #f4f4f5;
+    z-index: 90;
+    margin-top: 45px;
+    .wannago{
+      border-color: #d5d5d8;
+      color: #6c6c75;
+      background-color: #ffffff;
+      padding: 5px 17px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+    }
+    .contribution{
+      background-color: #32E5FF;
+      color: #ffffff;
+      padding: 5px 30px;
+      border: none;
+      border-radius: 4px;
+      margin-top: 8px;
+      font-size: 0.75rem;
+    }
+  }
+}
+.trip-summary__popularity img{
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+}
+.wannago img{
+  margin-right: 5px;
+  margin-bottom: 4px;
+  width: 16px;
+  height: 16px;
+}
+.contribution img{
+  margin-right: 5px;
+  margin-bottom: 4px;
+}
+hr{
+  margin: 12px auto;
+  width: 80%;
+  background-color: #d5d5d8;
+  height: 1px;
+  border: none;
+}
+
+
+//メインイメージ
+
+.trip-img{
+  width: 80%;
   margin: 0 auto;
-  .content__title{
+  .place__detail{
+    text-align: left;
+    margin-top: 12px;
+    line-height: 1.25;
+    font-size: 1.25rem;
+    letter-spacing: 1.8px;
+    word-wrap: break-word;
+  }
+}
+
+//口コミ
+.reviews{
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px 0;
+  .review__title{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     color: #2e2e3b;
     font-size: 1.38462rem;
+    font-weight: bold;
+    padding: 0 0 12px;
+    border-bottom: 1px solid #d5d5d8;
+  }
+  .review{
+    margin-top: 20px;
+    text-align: left;
+    border-bottom: 1px solid #d5d5d8;
+    padding: 0 0 12px;
+    .review__user__box{
+      display: block;
+      width: 100%;
+      position: relative;
+      .user__detail{
+        display: block;
+        flex-wrap: wrap;
+        align-content: space-between;
+        position: absolute;
+        top: 3px;
+        left: 50px;
+        line-height: 1.2;
+        .user__name{
+          font-size: 1rem;
+          color: #6c6c75;
+        }
+      }
+    }
+    .trip__date{
+      padding: 3px 0;
+    }
+    .review__text{
+      padding-bottom: 5px;
+      line-height: 1.5;
+    }
+    .review__image{
+      margin-bottom: 3px;
+    }
+    .favorite{
+      float: right;
+      padding: 5px 10px;
+      border: 1px solid #ffb900;
+      color: #ffb900;
+      background-color: #ffffff;
+      border-radius: 4px;
+      font-size: 0.75rem;
+    }
+    .favorite img{
+      margin-right: 5px;
+      margin-bottom: 4px;
+    }
+  }
+  .more{
+    padding: 6px 18px;
+    border: 1px solid #000000;
+    color:  #000000;
+    background-color: #ffffff;
+    margin: 15px auto 0px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+  }
+}
+.review__user__box img{
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+
+}
+.review__image img{
+  width: 78px;
+  height: 78px;
+  display: flex;
+}
+
+
+
+//テーブル
+
+.content{
+  width: 80%;
+  margin: 0 auto 40px;
+  .content__title{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: #2e2e3b;
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
     font-weight: bold;
     padding: 0 0 12px;
     border-bottom: 1px solid #d5d5d8;
@@ -95,6 +290,9 @@
       font-weight: bold;
       box-sizing: border-box;
     }
+    .table__title img{
+      margin-right: 15px;
+    }
     .table__body{
       flex-grow: 1;
       flex-shrink: 0;
@@ -105,6 +303,7 @@
       padding: 16px 8px;
       min-height: 80px;
       color: #4a4a4b;
+      letter-spacing: 1px;
     }
   }
 }
@@ -113,4 +312,124 @@
 }
 .table__body:not(:last-of-type){
   border-bottom: 1px solid #eaeaeb;
+}
+
+
+
+//旅行登録
+
+.trip-registration{
+  width: 700px;
+  margin: 0 auto;
+  padding: 40px;
+  box-sizing: border-box;
+  box-shadow: rgba(0,0,0,1) 0px 0px 1px 0px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  .attachment-form{
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  .attachment-form label{
+    display: block;
+    font-size: 0.85rem;
+  }
+  .attachment-form input{
+    font-size: 0.85rem;
+  }
+
+  .form{
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  .form label{
+    font-size: 0.85rem;
+  }
+  .form input{
+    width: 100%;
+    border: 1px solid #e1e5e7;
+    height: 31px;
+    padding: 5px 10px;
+    vertical-align: middle;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 100;
+  }
+  .form-group{
+    text-align: left;
+    margin-bottom: 20px;
+
+  }
+  .form-group label{
+    display: block;
+    font-size: 0.85rem;
+  }
+  .form-group textarea{
+    font-size: 0.85rem;
+    width: 100%;
+    border: 1px solid #e1e5e7;
+    height: 120px;
+    padding: 5px 10px;
+    vertical-align: middle;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 100;
+  }
+  .form select{
+    font-size: 0.85rem;
+    padding: 5px 10px;
+    vertical-align: middle;
+    border-radius: 4px;
+    font-weight: 100;
+  }
+  .action input{
+    width: 50%;
+    background-color: #32E5FF;
+    color: #FFFFFF;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 5px;
+  }
+  .field{
+    text-align: left;
+    padding-bottom: 10px;
+  }
+  .field label{
+    font-size: 0.85rem;
+    padding-right: 35px;
+  }
+  #getfile{
+    padding: 5px 10px;
+    vertical-align: middle;
+    border-radius: 4px;
+    font-size: 0.85rem;
+
+  }
+  .time{
+    text-align: left;
+    padding-bottom: 10px;
+  }
+  .time label{
+    display: block;
+    font-size: 0.85rem;
+  }
+  .time input{
+    font-size: 0.85rem;
+    padding: 5px 10px;
+    vertical-align: middle;
+    border-radius: 4px;
+    font-weight: 100;
+
+  }
+  #trip_start_time_5i{
+    display: none;
+  }
+  #trip_end_time_5i{
+    display: none;
+  }
+
 }

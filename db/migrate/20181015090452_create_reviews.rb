@@ -7,7 +7,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.integer :evaluation_numeric_number
       t.string :comment
       t.string :month
-      t.integer :time_zone
+      t.string :time_zone
 
       t.timestamps
     end

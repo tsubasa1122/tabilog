@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_23_084756) do
+ActiveRecord::Schema.define(version: 2018_10_24_101029) do
 
   create_table "categories", force: :cascade do |t|
     t.string "category_name"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,6 +39,14 @@ ActiveRecord::Schema.define(version: 2018_10_23_084756) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "review_photos", force: :cascade do |t|
+    t.integer "review_id"
+    t.string "review_image_id"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer "evaluation_id"
     t.integer "user_id"
@@ -45,20 +54,30 @@ ActiveRecord::Schema.define(version: 2018_10_23_084756) do
     t.integer "evaluation_numeric_number"
     t.string "comment"
     t.string "month"
-    t.integer "time_zone"
+    t.string "time_zone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trip_photos", force: :cascade do |t|
+    t.integer "trip_id", null: false
+    t.string "trip_image_id"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "trips", force: :cascade do |t|
-    t.string "place"
+    t.string "place_name"
+    t.string "place_detail"
     t.string "telephone_number"
-    t.string "photo_id"
+    t.string "address"
     t.integer "category_id"
     t.float "latitude"
     t.float "longitude"
     t.datetime "deleted_at"
-    t.integer "business_hours"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.string "regular_holiday"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

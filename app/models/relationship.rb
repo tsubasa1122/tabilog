@@ -1,2 +1,3 @@
 class Relationship < ApplicationRecord
+
 end

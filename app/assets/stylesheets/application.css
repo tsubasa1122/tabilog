@@ -345,7 +345,7 @@ header{
 .img-circle{
     width: 40px;
     height: 40px;
-    border-radius: 43px;
+    border-radius: 40px;
 }
 .header__nav li:nth-last-child{
     border-color: #32E5FF;
