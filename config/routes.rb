@@ -11,9 +11,15 @@ Rails.application.routes.draw do
   }, path: "", path_names: { sign_in: "login", sign_out: "logout", password: "reset_password", }
 
 
-  resources :users, only: [:show, :edit, :update, :destroy]
-  get '/users/:id/follower' => 'relationships#follower', as: 'follwer'
-  get '/users/:id/followings' => 'relationships#followings', as: 'followings'
+
+  get '/users' => "users#index", as: 'users'
+  get 'users/:id/followers' => "users#followers" , as: 'followers'
+  get 'users/:id/followings' => "users#followings", as: 'followings'
+  get '/users/:id' => "users#show", as: 'user'
+  get '/users/:id/edit' => "users#edit", as: 'edit_user'
+  patch '/users/:id' => "users#update"
+  delete '/users/:id' => "users#destroy"
+
 
 
   resources :favorites, only: [:create, :show, :destroy ]

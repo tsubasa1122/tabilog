@@ -1,0 +1,37 @@
+<% if user.header_image_id.presence %>
+  <div class="profile__header">
+    <div class="main__img"><%= attachment_image_tag user , :header_image %></div>
+  </div>
+<% end %>
+
+
+<div class="profile-contents">
+  <div class="profile-content">
+    <div class="username"><h1><%= user.name %></h1></div>
+    <div class="user__img"><%= attachment_image_tag user, :user_image, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%></div>
+    <div class="profile"><%= user.description %></div>
+    <div class="follow__status">
+      <div class="profile__follow">
+        <span class="follow__num">77</span>
+        <span class="follow__text">フォロー</span>
+      </div>
+      <div class="profile__follower">
+        <span class="follower__num">77</span>
+        <span class="follower__text">フォロワー</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="menu">
+  <div class="menu-inner">
+    <nav class="menu-nav">
+      <ul class="menu-ul">
+        <li class="menu-list">HOME</li>
+        <li class="menu-list">TRIP</li>
+        <li class="menu-list"></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+

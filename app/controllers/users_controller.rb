@@ -4,11 +4,11 @@ class UsersController < ApplicationController
   end
 
   def followings
-
+    @user = User.find(params[:id])
   end
 
-  def follwers
-
+  def followers
+    @user = User.find(params[:id])
   end
 
   def edit
@@ -30,6 +30,8 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to root_path
   end
+
+
 
   private
 

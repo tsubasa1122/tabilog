@@ -350,6 +350,16 @@ header{
 .header__nav li:nth-last-child{
     border-color: #32E5FF;
 }
+.review__btn{
+    background-color: #32E5FF;
+    color: #ffffff;
+    padding: 10px 25px;
+    border-radius: 4px;
+}
+.review__btn img{
+    padding-right: 5px;
+    padding-bottom: 3px;
+}
 .sign-up__btn{
     background-color: #32E5FF;
     color: #ffffff;

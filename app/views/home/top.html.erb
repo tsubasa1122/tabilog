@@ -9,8 +9,15 @@
 </div>
 <div class="main-contents">
   <div class="search clearfix">
-    <div class="search-bar"></div>
-    <div class="search-box">
+    <div class="search__bar">
+        <form action="<%= trips_path('aa') %>" method="get" class="form-inline">
+          <input type="text" id="search__bar" name="s_title" required size="10" placeholder=" 商品名やアーティスト名で検索" value="<%= request[:s_title] %>">
+          <button  class="search__button" type="submit">
+            <span class="search__button__txt" ><%= image_tag "search.png", alt:"" %> 検索</span>
+          </button>
+        </form>
+    </div>
+    <div class="search__box">
       <h2 class="search-area__title">全国のエリアから探す</h2>
       <div class="area-selector__regions">
         <section class="area-selector__region">
@@ -108,30 +115,8 @@
 
 
 
-<div class="search">
-  <form action="<%= trips_path('aa') %>" method="get" class="form-inline">
-    <input type="text" id="search__bar" name="s_title" required size="10" placeholder=" 商品名やアーティスト名で検索" value="<%= request[:s_title] %>">
-    <button  class="search__box" type="submit">
-      <span class="search__box__txt" ><%= image_tag "search.png", alt:"" %> 検索</span>
-    </button>
-  </form>
-</div>
 
 
-<div class="sidebar">
-  <div class="genre">
-    <div class="genre__title__box">
-      <span ></span>
-      <span class="genre__title">ジャンル</span>
-    </div>
-    <%# genres.each do |genre| %>
-      <%#= link_to user_products_path(genre.id) do %>
-<!--        <div class="genre__box clearfix">-->
-<!--          <span class="genre__name__img"><%#= image_tag "disc.png" ,alt:"" ,class: "" %></span>-->
-<!--          <span class="genre__name"><%#= genre.genre_name %></span>-->
-<!--          <span class="genre__arrow"><%#= image_tag "genre-arrow.png", alt:"" ,class: "" %></span>-->
-<!--        </div>-->
-      <%# end %>
-    <%# end %>
-  </div>
+
+
 
