@@ -7,7 +7,9 @@
     </div>
     <div class="trip-summary__actions">
       <button class="wannago"><%= image_tag "wannago.png" %>行きたい</button>
-      <button class="contribution"><%= image_tag "contribution.png" %>投稿</button>
+      <%= link_to new_trip_reviews_path(@trip.id) do %>
+        <button class="contribution"><%= image_tag "contribution.png" %>投稿</button>
+      <% end %>
     </div>
   </section>
   <hr>

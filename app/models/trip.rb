@@ -7,8 +7,6 @@ class Trip < ApplicationRecord
 
 
 
-
-
   #アソシエーション
   has_many :favorites, dependent: :destroy
   has_many :reviews, dependent: :destroy
@@ -18,4 +16,6 @@ class Trip < ApplicationRecord
   accepts_nested_attributes_for :trip_photos
   # 画像投稿
   accepts_attachments_for :trip_photos, attachment: :trip_image
+
+
 end

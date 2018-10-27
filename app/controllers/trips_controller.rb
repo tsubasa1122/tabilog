@@ -8,7 +8,7 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     @trip.save
-    puts @trip.errors.full_messages
+    # puts @trip.errors.full_messages
     params["trip"]["trip_photos_attributes"]["0"]["trip_image"].size().times do |i|
       if i == 0
         next
@@ -38,6 +38,6 @@ class TripsController < ApplicationController
 
   def trip_params
 
-    params.require(:trip).permit(:address, :start_time, :end_time, :place_name, :place_detail, :telephone_number, :category_id, :latitude, :longitude, :business_hours,:regular_holiday)
+    params.require(:trip).permit(:address, :start_time, :end_time, :place_name, :place_detail, :telephone_number, :category_id, :latitude, :longitude, :business_hours,:regular_holiday ,:deleted_at)
   end
 end

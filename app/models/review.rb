@@ -6,4 +6,7 @@ class Review < ApplicationRecord
   has_many :review_photos, dependent: :destroy
   accepts_nested_attributes_for :review_photos
   accepts_attachments_for :review_photos, attachment: :review_image
+  accepts_nested_attributes_for :review_photos
+  # 画像投稿
+
 end

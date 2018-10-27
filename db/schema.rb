@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_101029) do
 
   create_table "evaluations", force: :cascade do |t|
     t.string "evaluation_name"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_101029) do
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "review_id"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,6 +37,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_101029) do
   create_table "relationships", force: :cascade do |t|
     t.integer "follwer_id"
     t.integer "following_id"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,7 +57,9 @@ ActiveRecord::Schema.define(version: 2018_10_24_101029) do
     t.integer "evaluation_numeric_number"
     t.string "comment"
     t.string "month"
-    t.string "time_zone"
+    t.datetime "timezone_start"
+    t.datetime "timezone_end"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -109,6 +114,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_101029) do
   create_table "wannagos", force: :cascade do |t|
     t.integer "user_id"
     t.integer "review_id"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

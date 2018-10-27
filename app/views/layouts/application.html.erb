@@ -26,9 +26,6 @@
           <% if user_signed_in? %>
             <li><%= image_tag "notification.png" ,:width => "25px" , :height => "25px"  %></li>
             <li><%= attachment_image_tag @user, :user_image,  class: "img-circle", fallback: "no_image.jpg"%></li>
-            <%= link_to  new_review_path  do %>
-              <li><span class="review__btn"><%= image_tag "contribution.png" %>投稿</span></li>
-            <% end %>
             <%= link_to  destroy_user_session_path ,method: :delete do %>
               <li><span class="sign-up__btn">ログアウト</span></li>
             <% end %>
