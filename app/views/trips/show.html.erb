@@ -14,7 +14,7 @@
   <section class="trip-img">
     <div class="slide-box" id="my-slide">
       <% @images.each do |image| %>
-         <%= attachment_image_tag image , :trip_image   %>
+         <%= attachment_image_tag image , :trip_image , fallback: "no_image.jpg"  %>
       <% end %>
     </div>
 

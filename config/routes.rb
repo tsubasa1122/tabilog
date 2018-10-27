@@ -23,9 +23,14 @@ Rails.application.routes.draw do
 
 
   resources :favorites, only: [:create, :show, :destroy ]
-  resources :trips, only: [:new, :create, :index, :show, :edit, :update, :destroy]
+  resources :trips, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
+    resource :reviews, only: [:new, :create,  :destroy]
+  end
+  # 口コミのindexページ
+  get '/reviews/index' => "reviews#index", as: "reviews"
   resources :relationships, only: [:create, :destroy]
-  resources :reviews, only: [:new, :index, :show, :create, :edit, :update, :destroy]
+
+
 
 
 
