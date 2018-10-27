@@ -185,20 +185,24 @@ hr{
   margin: 0 auto;
   padding: 50px 0;
   .review__title{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    text-align: left;
     color: #2e2e3b;
-    font-size: 1.38462rem;
+    font-size: 1.4rem;
     font-weight: bold;
     padding: 0 0 12px;
     border-bottom: 1px solid #d5d5d8;
+  }
+  .review__title span{
+    color: #ffb900;
+    font-weight: bold;
+    font-size: 1.4rem;
   }
   .review{
     margin-top: 20px;
     text-align: left;
     border-bottom: 1px solid #d5d5d8;
     padding: 0 0 12px;
+    position: relative;
     .review__user__box{
       display: block;
       width: 100%;
@@ -226,6 +230,11 @@ hr{
     }
     .review__image{
       margin-bottom: 3px;
+      display: inline-flex;
+    }
+    .review__date{
+      display: block;
+      margin-bottom: 15px;
     }
     .favorite{
       float: right;
@@ -235,6 +244,9 @@ hr{
       background-color: #ffffff;
       border-radius: 4px;
       font-size: 0.75rem;
+      position: absolute;
+      right: 0px;
+      bottom: 3px;
     }
     .favorite img{
       margin-right: 5px;

@@ -310,7 +310,7 @@ a:hover {
 ul, ol {
     list-style: none;}
 p, span, li{
-    font-size: 0.75rem;
+    font-size: 1rem;
 }
 .clear-node {
     clear: both; }

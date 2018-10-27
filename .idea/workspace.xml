@@ -3,23 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d16b9166-4dee-46a4-8385-3663b8e1818e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/reviews.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/reviews.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/reviews_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/reviews_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/trips.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/trips.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/trips_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/trips_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/review.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/review.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/review_photo.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/review_photo.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/trip.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/trip.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/reviews/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/reviews/new.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/trips/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/trips/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20181015072845_create_relationships.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20181015072845_create_relationships.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20181015090307_create_evaluations.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20181015090307_create_evaluations.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20181015090438_create_favorites.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20181015090438_create_favorites.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20181015090452_create_reviews.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20181015090452_create_reviews.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20181023084756_create_wannagos.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20181023084756_create_wannagos.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -47,26 +34,26 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Gemfile" value="5" />
-          <entry key="css" value="16" />
-          <entry key="erb" value="60" />
+          <entry key="css" value="17" />
+          <entry key="erb" value="63" />
           <entry key="jpg" value="3" />
           <entry key="js" value="9" />
           <entry key="lock" value="1" />
-          <entry key="rb" value="223" />
-          <entry key="scss" value="22" />
+          <entry key="rb" value="224" />
+          <entry key="scss" value="24" />
           <entry key="vue" value="1" />
           <entry key="yml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="16" />
+          <entry key="CSS" value="17" />
           <entry key="Image" value="3" />
           <entry key="JavaScript" value="9" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="RHTML" value="60" />
-          <entry key="Ruby" value="228" />
-          <entry key="SCSS" value="22" />
+          <entry key="RHTML" value="63" />
+          <entry key="Ruby" value="229" />
+          <entry key="SCSS" value="24" />
           <entry key="Vue.js" value="1" />
           <entry key="YAML" value="5" />
         </counts>
@@ -74,23 +61,23 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Gemfile" value="191" />
-          <entry key="css" value="831" />
-          <entry key="erb" value="8485" />
+          <entry key="css" value="832" />
+          <entry key="erb" value="8979" />
           <entry key="js" value="39" />
           <entry key="lock" value="4" />
-          <entry key="rb" value="6441" />
-          <entry key="scss" value="4847" />
+          <entry key="rb" value="6681" />
+          <entry key="scss" value="4934" />
           <entry key="yml" value="175" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="831" />
+          <entry key="CSS" value="832" />
           <entry key="JavaScript" value="39" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="RHTML" value="8485" />
-          <entry key="Ruby" value="6632" />
-          <entry key="SCSS" value="4847" />
+          <entry key="RHTML" value="8979" />
+          <entry key="Ruby" value="6872" />
+          <entry key="SCSS" value="4934" />
           <entry key="YAML" value="175" />
         </counts>
       </usages-collector>
@@ -98,11 +85,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="-51">
+              <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -110,7 +97,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/schema.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
+            <state relative-caret-position="-581">
               <caret line="46" column="25" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="25" />
             </state>
           </provider>
@@ -119,17 +106,62 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/trips_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="21" column="7" selection-start-line="11" selection-start-column="3" selection-end-line="21" selection-end-column="7" />
+            <state relative-caret-position="296">
+              <caret line="30" column="62" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/trips/new.html.erb">
+        <entry file="file://$PROJECT_DIR$/app/views/trips/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="38" column="10" selection-start-line="33" selection-start-column="3" selection-end-line="38" selection-end-column="10" />
+            <state relative-caret-position="331">
+              <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="312" column="16" selection-start-line="312" selection-start-column="16" selection-end-line="312" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/trips.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="248" column="18" selection-start-line="248" selection-start-column="18" selection-end-line="248" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/users.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4093">
+              <caret line="208" column="21" selection-start-line="208" selection-start-column="21" selection-end-line="208" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="38" column="109" selection-start-line="38" selection-start-column="98" selection-end-line="38" selection-end-column="109" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="105" selection-start-line="12" selection-start-column="105" selection-end-line="12" selection-end-column="105" />
             </state>
           </provider>
         </entry>
@@ -143,6 +175,7 @@
       <find>p</find>
       <find>px</find>
       <find>place</find>
+      <find>span</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,7 +197,6 @@
         <option value="$PROJECT_DIR$/db/migrate/20181015090358_create_trips.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/underscore.js" />
-        <option value="$PROJECT_DIR$/app/views/trips/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/trips/index.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20181015105517_devise_create_users.rb" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
@@ -180,10 +212,8 @@
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/users.scss" />
         <option value="$PROJECT_DIR$/app/views/users/_profile.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/slick.css" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/trips.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/slick-theme.css" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20181023084756_create_wannagos.rb" />
@@ -196,12 +226,15 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/reviews.scss" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/models/trip.rb" />
-        <option value="$PROJECT_DIR$/app/views/trips/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/reviews/new.html.erb" />
         <option value="$PROJECT_DIR$/app/models/review.rb" />
         <option value="$PROJECT_DIR$/app/models/review_photo.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/trips_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
+        <option value="$PROJECT_DIR$/app/views/trips/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/trips_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/trips/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/trips.scss" />
       </list>
     </option>
   </component>
@@ -529,15 +562,16 @@
       <updated>1539587151710</updated>
       <workItem from="1539587154110" duration="6869000" />
       <workItem from="1539613214848" duration="77214000" />
-      <workItem from="1540217640785" duration="96315000" />
+      <workItem from="1540217640785" duration="103073000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180398000" />
+    <option name="totallyTimeSpent" value="187156000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.38984263" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -576,13 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="12" column="105" selection-start-line="12" selection-start-column="105" selection-end-line="12" selection-end-column="105" />
         </state>
       </provider>
     </entry>
@@ -628,13 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/users.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="208" column="21" selection-start-line="208" selection-start-column="21" selection-end-line="208" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/_profile.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -646,13 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-127">
           <caret line="1" column="42" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="331" column="22" selection-start-line="331" selection-start-column="22" selection-end-line="331" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -804,31 +817,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="38" column="109" selection-start-line="38" selection-start-column="98" selection-end-line="38" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/trips/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="45" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/trips.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="447" selection-start-line="331" selection-end-line="447" />
         </state>
       </provider>
     </entry>
@@ -874,31 +866,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/trips/new.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="38" column="10" selection-start-line="33" selection-start-column="3" selection-end-line="38" selection-end-column="10" />
+        <state relative-caret-position="570">
+          <caret line="38" column="109" selection-start-line="38" selection-start-column="98" selection-end-line="38" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="105" selection-start-line="12" selection-start-column="105" selection-end-line="12" selection-end-column="105" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
+        <state relative-caret-position="-581">
           <caret line="46" column="25" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/users.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4093">
+          <caret line="208" column="21" selection-start-line="208" selection-start-column="21" selection-end-line="208" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="312" column="16" selection-start-line="312" selection-start-column="16" selection-end-line="312" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/trips/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/trips_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="21" column="7" selection-start-line="11" selection-start-column="3" selection-end-line="21" selection-end-column="7" />
+        <state relative-caret-position="296">
+          <caret line="30" column="62" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="-51">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/trips/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/trips.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="248" column="18" selection-start-line="248" selection-start-column="18" selection-end-line="248" selection-end-column="18" />
         </state>
       </provider>
     </entry>

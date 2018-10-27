@@ -25,9 +25,11 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
-    @images = TripPhoto.where(trip_id: @trip.id)
+    @trip_photos = TripPhoto.where(trip_id:  params[:id])
+    @reviews = Review.where(trip_id: params[:id])
 
-    puts @img
+    @review_photos = ReviewPhoto.where(review_id: @reviews.ids )
+    # puts @img
   end
 
   def index

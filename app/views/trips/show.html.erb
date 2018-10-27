@@ -15,8 +15,8 @@
   <hr>
   <section class="trip-img">
     <div class="slide-box" id="my-slide">
-      <% @images.each do |image| %>
-         <%= attachment_image_tag image , :trip_image , fallback: "no_image.jpg"  %>
+      <% @trip_photos.each do |tp| %>
+         <%= attachment_image_tag tp , :trip_image , fallback: "no_image.jpg"  %>
       <% end %>
     </div>
 
@@ -25,27 +25,34 @@
 
 
   <section class="reviews">
-    <h2 class="review__title">口コミ（）</h2>
-    <div class="review">
-      <div class="review__user__box">
-        <%= image_tag "BE107FAC-D706-48DF-912B-4BD2C11B41F7.jpg" %>
-        <div class="user__detail">
-          <p class="user__name">なかの</p>
-          <span class="evaluation__name">快適さ</span>
-          <span class="evaluation__num">星3つ</span>
+    <h2 class="review__title">口コミ（<span color="FFB900"><%= @reviews.count %></span>）</h2>
+    <% @reviews.each do |review| %>
+      <div class="review">
+        <div class="review__user__box">
+          <%= attachment_image_tag  review.user , :user_image,  fallback: "no_image.jpg"  %>
+          <div class="user__detail">
+            <p class="user__name"><%= review.user.name %></p>
+            <span class="evaluation__name"><%= review.evaluation.evaluation_name %></span>
+            <span class="evaluation__num">星3つ</span>
+          </div>
         </div>
+        <div class="trip__date">
+          <span class="trip__month"><%= review.month %></span>
+          <span>時間帯：</span>
+          <span class="trip__time"><%= review.timezone_start.strftime('%H') %></span>時
+          〜
+          <span class="trip__time"><%= review.timezone_end.strftime('%H') %></span>時
+        </div>
+        <p class="review__text"><%= review.comment %></p>
+        <% review.review_photos.each do |rp| %>
+          <div class="review__image">
+             <%= attachment_image_tag rp , :review_image %>
+          </div>
+        <% end %>
+        <span class="review__date">2018年xx月xx日</span>
+        <button class="favorite"><%= image_tag "favorite.png" %>お気に入り</button>
       </div>
-      <div class="trip__date">
-        <span class="trip__month">10月</span>
-        <span class="trip__time">朝</span>
-      </div>
-      <p class="review__text">テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</p>
-      <div class="review__image">
-        <%= image_tag "BE107FAC-D706-48DF-912B-4BD2C11B41F7.jpg" %>
-      </div>
-      <span class="review__date">2018年xx月xx日</span>
-      <button class="favorite"><%= image_tag "favorite.png" %>お気に入り</button>
-    </div>
+    <% end %>
     <button class="more">もっとみる</button>
   </section>
 
