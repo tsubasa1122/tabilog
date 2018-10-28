@@ -19,3 +19,23 @@
 //= require_tree .
 
 
+
+
+
+
+
+
+
+//メニュー表示
+
+$(function(){
+    $(document).on("click", ".img-circle", function(){
+        $(".menu__wrapper").show();
+        $(".menu__modal").show();
+    })
+    $(document).on("click", ".menu__wrapper" , function(){
+        $(".menu__wrapper").hide();
+        $(".menu__modal").hide();
+    })
+});
+

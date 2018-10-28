@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'wannagos/index'
   root 'home#top'
   get '/about' => "home#about"
 
@@ -22,7 +23,8 @@ Rails.application.routes.draw do
 
 
 
-  resources :favorites, only: [:create, :show, :destroy ]
+  resources :favorites, only: [:index, :create, :show, :destroy ]
+  resources :wannagos, only: [:index, :create, :show, :destroy ]
   resources :trips, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
     resources :reviews, only: [ :index, :create, :destroy]
   end

@@ -337,6 +337,14 @@ hr{
 .table__body:not(:last-of-type){
   border-bottom: 1px solid #eaeaeb;
 }
+.evaluation__name{
+  display: inline-block;
+  background: #f7f7f7;
+  border-left: solid 6px #ff7c5c;
+  color: #ff7c5c;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
 
 
 
