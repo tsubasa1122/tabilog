@@ -26,10 +26,13 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @trip_photos = TripPhoto.where(trip_id:  params[:id])
-    @reviews = Review.where(trip_id: params[:id])
+    @reviews = Review.where(trip_id: params[:id]).order(id: "DESC")
 
     @review_photos = ReviewPhoto.where(review_id: @reviews.ids )
     # puts @img
+    @evaluations = Evaluation.all
+    @review = Review.new
+    @review.review_photos.build
   end
 
   def index

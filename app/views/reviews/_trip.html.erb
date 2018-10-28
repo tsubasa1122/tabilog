@@ -1,0 +1,28 @@
+
+  <div class="review">
+    <div class="review__user__box">
+    <%= link_to user_path(review.user.id) do %>
+      <%= attachment_image_tag  review.user , :user_image,  fallback: "no_image.jpg"  %>
+      <div class="user__detail">
+        <p class="user__name"><%= review.user.name %></p>
+    <% end %>
+        <span class="evaluation__name"><%= review.evaluation.evaluation_name %></span>
+        <span class="evaluation__num">星3つ</span>
+      </div>
+    </div>
+    <div class="trip__date">
+      <span class="trip__month"><%= review.month %></span>
+      <span>時間帯：</span>
+      <span class="trip__time"><%= review.timezone_start.strftime('%H') %></span>時
+      〜
+      <span class="trip__time"><%= review.timezone_end.strftime('%H') %></span>時
+    </div>
+    <p class="review__text"><%= review.comment %></p>
+    <% review.review_photos.each do |rp| %>
+      <div class="review__image">
+        <%= attachment_image_tag rp , :review_image %>
+      </div>
+    <% end %>
+    <span class="review__date"><%= review.created_at.strftime('%Y年%m月%d日')  %></span>
+    <button class="favorite"><%= image_tag "favorite.png" %>お気に入り</button>
+  </div>

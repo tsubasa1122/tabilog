@@ -1,18 +1,12 @@
 class ReviewsController < ApplicationController
-  def new
-    @evaluations = Evaluation.all
-    @trip = Trip.find(params[:trip_id])
-    puts @trip.id
-    @review = Review.new
-    @review.review_photos.build
-  end
+
 
   def index
 
   end
 
   def create
-    trip = Trip.find(params[:trip_id])
+    @trip = Trip.find(params[:trip_id])
     @review = current_user.reviews.new(review_params)
     @review.trip_id = params[:trip_id]
     @review.save
@@ -28,7 +22,7 @@ class ReviewsController < ApplicationController
       rp.save
     end
 
-    redirect_to trip_path(trip.id)
+    render partial: 'trip', locals: {review: @review}
 
   end
 
