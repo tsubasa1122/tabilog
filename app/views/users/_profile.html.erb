@@ -8,7 +8,7 @@
 <div class="profile-contents">
   <div class="profile-content">
     <div class="username"><h1><%= user.name %></h1></div>
-    <div class="user__img"><%= attachment_image_tag user, :user_image, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%></div>
+    <div class="user__img"><%= attachment_image_tag user, :user_image, class: "img-circle pull-left profile-thumb", fallback: "/images/no_image.jpg"%></div>
     <div class="profile"><%= user.description %></div>
     <div class="follow__status">
       <div class="profile__follow">

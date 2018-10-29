@@ -1,7 +1,7 @@
 
 <div class="main clear-node">
     <div class="main__images">
-      <div class="main__image"><%= image_tag 'carshare501IMGL2465_TP_V4 .jpg', :width=>'100%', :height=>'488px' %></div>
+      <div class="main__image"><%= image_tag '/images/carshare501IMGL2465_TP_V4 .jpg', :width=>'100%', :height=>'488px' %></div>
       <h1 class="main__text">
         たいせつな人と過ごす<br>満足のゆく時間を。
       </h1>
@@ -13,7 +13,7 @@
         <form action="<%= trips_path('aa') %>" method="get" class="form-inline">
           <input type="text" id="search__bar" name="s_title" required size="10" placeholder=" 商品名やアーティスト名で検索" value="<%= request[:s_title] %>">
           <button  class="search__button" type="submit">
-            <span class="search__button__txt" ><%= image_tag "search.png", alt:"" %> 検索</span>
+            <span class="search__button__txt" ><%= image_tag "/images/search.png", alt:"" %> 検索</span>
           </button>
         </form>
     </div>

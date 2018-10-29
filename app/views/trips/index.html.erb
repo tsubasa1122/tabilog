@@ -4,14 +4,14 @@
 <div class="trips">
   <% @trips.each do |trip| %>
     <div class="trip">
-      <div class="trip__img"><%= image_tag 'carshare501IMGL2465_TP_V4 .jpg', :width=>'100%', :height=>'200px' %></div>
+      <div class="trip__img"><%= image_tag '/images/carshare501IMGL2465_TP_V4 .jpg', :width=>'100%', :height=>'200px' %></div>
       <div class="trip__text">
         <h3 class="place__name"><%= trip.place_name.truncate(15) %></h3>
         <p class="place__detail"><%= trip.place_detail.truncate(40) %></p>
       </div>
       <div class="evaluation">評価</div>
       <div class="review">口コミ：</div>
-      <button class="wannago"><%= image_tag "wannago.png" %>行きたい</button>
+      <button class="wannago"><%= image_tag "/images/wannago.png" %>行きたい</button>
     </div>
   <% end %>
 </div>

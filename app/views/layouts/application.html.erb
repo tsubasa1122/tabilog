@@ -20,12 +20,12 @@
   <body>
   <header>
     <div class="header__menu clearfix">
-      <h1 class="header__logo"><%= link_to image_tag("logo.png"), root_path  %></h1>
+      <h1 class="header__logo"><%= link_to image_tag("/images/logo.png"), root_path  %></h1>
       <nav class="header__nav">
         <ul>
           <% if user_signed_in? %>
-            <li><%= image_tag "notification.png" ,:width => "25px" , :height => "25px"  %></li>
-            <li><%= attachment_image_tag @user, :user_image,  class: "img-circle", fallback: "no_image.jpg"%></li>
+            <li><%= image_tag "/images/notification.png" ,:width => "25px" , :height => "25px"  %></li>
+            <li><%= attachment_image_tag @user, :user_image,  class: "img-circle", fallback: "/images/no_image.jpg"%></li>
             <%= link_to  destroy_user_session_path ,method: :delete do %>
               <li><span class="sign-up__btn">ログアウト</span></li>
             <% end %>

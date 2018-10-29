@@ -3,11 +3,11 @@
   <section class="trip-summary">
     <div class="trip-summary__content">
       <h1 class="place__title"><%= @trip.place_name %></h1>
-      <div class="trip-summary__popularity"><%= image_tag "BE107FAC-D706-48DF-912B-4BD2C11B41F7.jpg" %>人がオススメしています</div>
+      <div class="trip-summary__popularity"><%= image_tag "/images/BE107FAC-D706-48DF-912B-4BD2C11B41F7.jpg" %>人がオススメしています</div>
     </div>
     <div class="trip-summary__actions">
-      <button class="wannago"><%= image_tag "wannago.png" %>行きたい</button>
-        <button class="contribution" id="modal-open"><%= image_tag "contribution.png" %>投稿</button>
+      <button class="wannago"><%= image_tag "/images/wannago.png" %>行きたい</button>
+        <button class="contribution" id="modal-open"><%= image_tag "/images/contribution.png" %>投稿</button>
     </div>
   </section>
   <hr>
@@ -48,7 +48,7 @@
   <section class="trip-img">
     <div class="slide-box" id="my-slide">
       <% @trip_photos.each do |tp| %>
-         <%= attachment_image_tag tp , :trip_image , fallback: "no_image.jpg"  %>
+         <%= attachment_image_tag tp , :trip_image , fallback: "/images/no_image.jpg"  %>
       <% end %>
     </div>
 
@@ -68,15 +68,15 @@
   <section class="content">
     <h2 class="content__title"><%= @trip.place_name %>の情報</h2>
     <dl class="content__table">
-      <dt class="table__title"><%= image_tag "category.png" %>カテゴリー</dt>
+      <dt class="table__title"><%= image_tag "/images/category.png" %>カテゴリー</dt>
       <dd class="table__body"><%= @trip.category.category_name %></dd>
-      <dt class="table__title"><%= image_tag "time.png" %>営業時間</dt>
+      <dt class="table__title"><%= image_tag "/images/time.png" %>営業時間</dt>
       <dd class="table__body"><%= @trip.start_time.hour %>時 〜 <%= @trip.end_time.hour %>時</dd>
-      <dt class="table__title"><%= image_tag "close.png" %>定休日</dt>
+      <dt class="table__title"><%= image_tag "/images/close.png" %>定休日</dt>
       <dd class="table__body"><%= @trip.regular_holiday %></dd>
-      <dt class="table__title"><%= image_tag "telephone.png" %>電話番号</dt>
+      <dt class="table__title"><%= image_tag "/images/telephone.png" %>電話番号</dt>
       <dd class="table__body"><%= @trip.telephone_number %></dd>
-      <dt class="table__title"><%= image_tag "location.png" %>アクセス</dt>
+      <dt class="table__title"><%= image_tag "/images/location.png" %>アクセス</dt>
       <dd class="table__body"><div id="map" style='width: 100%; height: 400px;'></div></dd>
     </dl>
   </section>
