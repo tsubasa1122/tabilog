@@ -1,9 +1,6 @@
 class ReviewsController < ApplicationController
 
 
-  def index
-    @reviews = Review.where(user_id: current_user.id)
-  end
 
   def favorite
     review = Review.find(params[:id])
@@ -17,6 +14,7 @@ class ReviewsController < ApplicationController
       render json: review.id
     end
   end
+
 
   def create
     @trip = Trip.find(params[:trip_id])

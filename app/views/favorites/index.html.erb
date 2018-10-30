@@ -17,9 +17,8 @@
       <div class="trip__date">
         <span class="trip__month"><%= favorite.review.month %></span>
         <span>時間帯：</span>
-        <span class="trip__time"><%= favorite.review.timezone_start.strftime('%H') %></span>時
-        〜
-        <span class="trip__time"><%= favorite.review.timezone_end.strftime('%H') %></span>時
+        <span class="trip__time"><%= favorite.review.timezone_start.strftime('%H') %>時〜</span>
+        <span class="trip__time"><%= favorite.review.timezone_end.strftime('%H') %>時</span>
       </div>
       <p class="review__text"><%= favorite.review.comment %></p>
       <% favorite.review.review_photos.each do |rp| %>

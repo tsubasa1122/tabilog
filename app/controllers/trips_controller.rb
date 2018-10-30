@@ -5,6 +5,19 @@ class TripsController < ApplicationController
     @trip.trip_photos.build
   end
 
+  def wannago
+    trip = Trip.find(params[:id])
+    if trip.wannagoed_by?(current_user)
+      wannago = current_user.wannagos.find_by(trip_id: trip.id)
+      wannago.destroy
+      render json: trip.id
+    else
+      wannago = current_user.wannagos.new(trip_id: trip.id)
+      wannago.save
+      render json: trip.id
+    end
+  end
+
   def create
     @trip = Trip.new(trip_params)
     @trip.save

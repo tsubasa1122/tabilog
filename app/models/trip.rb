@@ -17,5 +17,8 @@ class Trip < ApplicationRecord
   # 画像投稿
   accepts_attachments_for :trip_photos, attachment: :trip_image
 
-
+  # 行きたいボタンを押しているかどうか
+  def wannagoed_by?(user)
+    wannagos.where(user_id: user.id).exists?
+  end
 end

@@ -6,14 +6,21 @@
       <div class="trip-summary__popularity"><%= image_tag "/images/BE107FAC-D706-48DF-912B-4BD2C11B41F7.jpg" %>人がオススメしています</div>
     </div>
     <div class="trip-summary__actions">
-      <button class="wannago"><%= image_tag "/images/wannago.png" %>行きたい</button>
-        <button class="contribution" id="modal-open"><%= image_tag "/images/contribution.png" %>投稿</button>
+      <% if @trip.wannagoed_by?(current_user) %>
+        <%= link_to wannago_trips_path(@trip), class: "wanna", remote: true do %>
+          <button class="wannago" id="<%= @trip.id %>"><%= image_tag "/images/wannago.png" %>行きたい</button>
+        <% end %>
+      <% else %>
+        <%= link_to wannago_trips_path(@trip), class: "wanna", remote: true do  %>
+          <button class="wannago" id="<%= @trip.id %>"><%= image_tag "/images/wannago.png" %>行きたい</button>
+        <% end %>
+      <% end %>
+      <button class="contribution" id="modal-open"><%= image_tag "/images/contribution.png" %>投稿</button>
     </div>
   </section>
   <hr>
-
 <div class="review__wrapper"></div>
-  <div class="review-registration main-modal ">
+  <div class="review-registration main-modal">
     <%= form_with(model: @review ,url: "/trips/#{@trip.id}/reviews" , remote: true) do |f| %>
       <div class="form">
         <%= f.label :evaluation_id, "カテゴリー" %>
@@ -52,22 +59,10 @@
          <%= attachment_image_tag tp , :trip_image , fallback: "/images/no_image.jpg"  %>
       <% end %>
     </div>
-
-    <p class="place__detail"><%= @trip.place_detail %></p>
-  </section>
-
-
-  <section class="reviews">
-    <h2 class="review__title">口コミ（<span color="FFB900"><%= @reviews.count %></span>）</h2>
-    <div class="review__box">
-      <% @reviews.each do |review| %>
-        <%= render "reviews/trip", review: review %>
-      <% end %>
-    </div>
-    <button class="more">もっとみる</button>
   </section>
   <section class="content">
     <h2 class="content__title"><%= @trip.place_name %>の情報</h2>
+    <p class="place__detail"><%= @trip.place_detail %></p>
     <dl class="content__table">
       <dt class="table__title"><%= image_tag "/images/category.png" %>カテゴリー</dt>
       <dd class="table__body"><%= @trip.category.category_name %></dd>
@@ -81,6 +76,16 @@
       <dd class="table__body"><div id="map" style='width: 100%; height: 400px;'></div></dd>
     </dl>
   </section>
+  <section class="reviews">
+    <h2 class="review__title">口コミ（<span color="FFB900"><%= @reviews.count %></span>）</h2>
+    <div class="review__box">
+      <% @reviews.each do |review| %>
+        <%= render "reviews/trip", review: review %>
+      <% end %>
+    </div>
+    <button class="more">もっとみる</button>
+  </section>
+
 </div>
 
 
@@ -99,9 +104,7 @@
         handler.getMap().setZoom(17);
     });
 </script>
-
 <script>
-
     $(document).ready(function(){
         $('#my-slide').slick({
             // アクセシビリティ。左右ボタンで画像の切り替えをできるかどうか
@@ -183,10 +186,23 @@
         })
     })
 </script>
-
-<script >
+<script>
     $(function() {
         $(document).on("ajax:success", ".fav", function(e) {
+            console.log(e);
+            if ($('#' + e.detail[0]).hasClass('heart')) {
+                $('#' + e.detail[0]).removeClass('heart');
+            } else {
+                $('#' + e.detail[0]).addClass('heart');
+            }
+        })
+    })
+</script>
+
+
+<script>
+    $(function() {
+        $(document).on("ajax:success", ".wanna", function(e) {
             console.log(e);
             if ($('#' + e.detail[0]).hasClass('heart')) {
                 $('#' + e.detail[0]).removeClass('heart');

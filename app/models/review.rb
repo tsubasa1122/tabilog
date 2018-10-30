@@ -8,7 +8,9 @@ class Review < ApplicationRecord
   accepts_attachments_for :review_photos, attachment: :review_image
   accepts_nested_attributes_for :review_photos
   # 画像投稿
-  def favorited_by?(user)#いいねしているかどうか
+
+  #　お気に入りしているかどうか
+  def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
 end

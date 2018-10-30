@@ -9,8 +9,7 @@
         <h3 class="place__name"><%= trip.place_name.truncate(15) %></h3>
         <p class="place__detail"><%= trip.place_detail.truncate(40) %></p>
       </div>
-      <div class="evaluation">評価</div>
-      <div class="review">口コミ：</div>
+      <div class="review__num">口コミ：<span><%= trip.reviews.count %></span></div>
       <button class="wannago"><%= image_tag "/images/wannago.png" %>行きたい</button>
     </div>
   <% end %>
