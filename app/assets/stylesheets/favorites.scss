@@ -1,3 +1,87 @@
 // Place all the styles related to the favorites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.favorites{
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px 0;
+  border-top: 1px solid #d5d5d8;
+  .favorite{
+    margin-top: 20px;
+    text-align: left;
+    border-bottom: 1px solid #d5d5d8;
+    padding: 0 0 12px;
+    position: relative;
+    .favorite__user__box{
+      display: block;
+      width: 100%;
+      position: relative;
+      .user__detail{
+        display: block;
+        flex-wrap: wrap;
+        align-content: space-between;
+        position: absolute;
+        top: 3px;
+        left: 50px;
+        line-height: 1.2;
+        .user__name{
+          font-size: 1rem;
+          color: #6c6c75;
+        }
+      }
+    }
+    .trip__date{
+      padding: 3px 0;
+    }
+    .review__text{
+      padding-bottom: 5px;
+      line-height: 1.5;
+    }
+    .review__image{
+      margin-bottom: 3px;
+      display: inline-flex;
+    }
+    .review__date{
+      display: block;
+      font-size: 0.75rem;
+    }
+    .favorite-button{
+      float: right;
+      padding: 5px 10px;
+      border: 1px solid #ffb900;
+      color: #ffb900;
+      background-color: #ffffff;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      position: absolute;
+      right: 0px;
+      bottom: 3px;
+    }
+    .favorite img{
+      margin-right: 5px;
+      margin-bottom: 4px;
+    }
+  }
+  .more{
+    padding: 6px 18px;
+    border: 1px solid #000000;
+    color:  #000000;
+    background-color: #ffffff;
+    margin: 15px auto 0px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+  }
+  .favorite__user__box img{
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+
+  }
+  .favorite__image img{
+    width: 78px;
+    height: 78px;
+    display: flex;
+  }
+}

@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_101029) do
 
   create_table "evaluations", force: :cascade do |t|
     t.string "evaluation_name"
+    t.integer "evaluation_numeric_number"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,7 +55,6 @@ ActiveRecord::Schema.define(version: 2018_10_24_101029) do
     t.integer "evaluation_id"
     t.integer "user_id"
     t.integer "trip_id"
-    t.integer "evaluation_numeric_number"
     t.string "comment"
     t.string "month"
     t.datetime "timezone_start"

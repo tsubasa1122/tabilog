@@ -4,7 +4,6 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.integer :evaluation_id
       t.integer :user_id
       t.integer :trip_id
-      t.integer :evaluation_numeric_number
       t.string :comment
       t.string :month
       t.datetime :timezone_start

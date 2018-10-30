@@ -1,0 +1,42 @@
+
+
+<%= render "users/profile", user: @user %>
+<div class="favorites">
+  <% @favorites.each do |favorite| %>
+    <div class="favorite">
+      <div class="favorite__user__box">
+        <%= link_to user_path(favorite.review.user_id) do %>
+          <%= attachment_image_tag  favorite.review.user , :user_image,  fallback: "/images/no_image.jpg"  %>
+          <div class="user__detail">
+            <p class="user__name"><%= favorite.review.user.name %></p>
+        <% end %>
+        <span class="evaluation__name"><%= favorite.review.evaluation.evaluation_name %></span>
+        <span class="evaluation__num">星3つ</span>
+        </div>
+      </div>
+      <div class="trip__date">
+        <span class="trip__month"><%= favorite.review.month %></span>
+        <span>時間帯：</span>
+        <span class="trip__time"><%= favorite.review.timezone_start.strftime('%H') %></span>時
+        〜
+        <span class="trip__time"><%= favorite.review.timezone_end.strftime('%H') %></span>時
+      </div>
+      <p class="review__text"><%= favorite.review.comment %></p>
+      <% favorite.review.review_photos.each do |rp| %>
+        <div class="review__image">
+          <%= attachment_image_tag rp , :review_image %>
+        </div>
+      <% end %>
+      <span class="review__date"><%= favorite.review.created_at.strftime('%Y年%m月%d日')  %></span>
+      <% if favorite.review.favorited_by?(current_user) %>
+        <%= link_to favorite_reviews_path(favorite.review), class: "fav", remote: true do %>
+          <button class="favorite-button" id="<%= favorite.review.id %>"><i class="fa fa-heart-o" ></i>お気に入り</button>
+        <% end %>
+      <% else %>
+        <%= link_to favorite_reviews_path(favorite.review), class: "fav", remote: true do %>
+          <button class="favorite-button" id="<%= favorite.review.id %>"><i class="fa fa-heart-o" ></i>お気に入り</button>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

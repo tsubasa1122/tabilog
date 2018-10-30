@@ -2,7 +2,20 @@ class ReviewsController < ApplicationController
 
 
   def index
+    @reviews = Review.where(user_id: current_user.id)
+  end
 
+  def favorite
+    review = Review.find(params[:id])
+    if review.favorited_by?(current_user)
+      fav = current_user.favorites.find_by(review_id: review.id)
+      fav.destroy
+      render json: review.id
+    else
+      fav = current_user.favorites.new(review_id: review.id)
+      fav.save
+      render json: review.id
+    end
   end
 
   def create

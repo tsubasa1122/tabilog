@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+/*
+ *= require font-awesome
+ */
 * {
     margin: 0;
     padding: 0;
@@ -310,7 +313,7 @@ a:hover {
 ul, ol {
     list-style: none;}
 p, span, li{
-    font-size: 1rem;
+    font-size: 0.75rem;
 }
 .clear-node {
     clear: both; }

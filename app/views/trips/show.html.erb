@@ -13,7 +13,7 @@
   <hr>
 
 <div class="review__wrapper"></div>
-  <div class="review-registration modal-main">
+  <div class="review-registration main-modal ">
     <%= form_with(model: @review ,url: "/trips/#{@trip.id}/reviews" , remote: true) do |f| %>
       <div class="form">
         <%= f.label :evaluation_id, "カテゴリー" %>
@@ -44,6 +44,7 @@
       </div>
     <% end %>
   </div>
+
 
   <section class="trip-img">
     <div class="slide-box" id="my-slide">
@@ -83,7 +84,7 @@
 </div>
 
 
-<script type="text/javascript">
+<script >
     handler = Gmaps.build('Google');
     handler.buildMap({ provider: { scrollwheel: false }, internal: {id: 'map'}}, function(){
         markers = handler.addMarkers([
@@ -163,6 +164,7 @@
             $('#review_month').val('');
             $('#review_review_photos_attributes_0_review_image').val('');
             $('.review-registration').hide();
+            $('.review__wrapper').hide();
         })
 
         $(document).on('click', 'input[type=submit]', function() {
@@ -172,20 +174,25 @@
         })
         $(document).on('click', '.contribution', function() {
             $('.review-registration').show();
-            $('<%= @reviews.count %>')
+            $(".review__wrapper").show();
 
+        })
+        $(document).on("click", ".review__wrapper" , function(){
+            $('.review-registration').hide();
+            $('.review__wrapper').hide();
         })
     })
 </script>
-<script>
-    $(function(){
-        $(document).on("click", "#contribution", function(){
-            $(".review__wrapper").show();
-            $(".modal-main").show();
-        })
-        $(document).on("click", ".review__wrapper" , function(){
-            $(".review__wrapper").hide();
-            $(".modal-main").hide();
+
+<script >
+    $(function() {
+        $(document).on("ajax:success", ".fav", function(e) {
+            console.log(e);
+            if ($('#' + e.detail[0]).hasClass('heart')) {
+                $('#' + e.detail[0]).removeClass('heart');
+            } else {
+                $('#' + e.detail[0]).addClass('heart');
+            }
         })
     })
 </script>

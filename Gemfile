@@ -9,6 +9,7 @@ gem "refile-mini_magick"
 gem "webpacker"
 gem "gmaps4rails"
 gem "geocoder"
+gem "font-awesome-rails"
 gem 'paranoia', '~> 2.3', '>= 2.3.1'
 
 

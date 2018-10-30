@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'wannagos/index'
   root 'home#top'
   get '/about' => "home#about"
 
@@ -23,11 +22,16 @@ Rails.application.routes.draw do
 
 
 
-  resources :favorites, only: [:index, :create, :show, :destroy ]
-  resources :wannagos, only: [:index, :create, :show, :destroy ]
+  resources :favorites, only: [:index]
+  resources :wannagos, only: [:index]
   resources :trips, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
     resources :reviews, only: [ :index, :create, :destroy]
   end
+
+  # お気に入り非同期のroute
+  get "reviews/favorite/:id" => "reviews#favorite" , as:"favorite_reviews"
+  # 行きたいの非同期のroute
+  get "trips/wannago/:id" => "trips#wannago", as:"wannago_trips"
 
   resources :relationships, only: [:create, :destroy]
 
