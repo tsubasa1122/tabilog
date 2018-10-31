@@ -10,7 +10,15 @@
         <p class="place__detail"><%= trip.place_detail.truncate(40) %></p>
       </div>
       <div class="review__num">口コミ：<span><%= trip.reviews.count %></span></div>
-      <button class="wannago"><%= image_tag "/images/wannago.png" %>行きたい</button>
+      <% if trip.wannagoed_by?(current_user) %>
+        <%= link_to wannago_trips_path(trip), class: "wanna", remote: true do %>
+          <button class="wannago-button" id="<%= trip.id %>"><%= image_tag "/images/wannago.png" %>行きたい</button>
+        <% end %>
+      <% else %>
+        <%= link_to wannago_trips_path(trip), class: "wanna", remote: true do  %>
+          <button class="wannago-button" id="<%= trip.id %>"><%= image_tag "/images/wannago.png" %>行きたい</button>
+        <% end %>
+      <% end %>
     </div>
   <% end %>
 </div>

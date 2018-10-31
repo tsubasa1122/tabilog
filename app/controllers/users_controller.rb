@@ -1,14 +1,8 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   def show
     @user = User.find(params[:id])
-  end
-
-  def followings
-    @user = User.find(params[:id])
-  end
-
-  def followers
-    @user = User.find(params[:id])
+    @reviews = Review.where(user_id: current_user.id)
   end
 
   def edit

@@ -31,9 +31,8 @@ class TripsController < ApplicationController
       end
       tp = TripPhoto.new(trip_id: @trip.id, trip_image: params["trip"]["trip_photos_attributes"]["0"]["trip_image"][i])
       tp.save
-
     end
-    redirect_to root_path
+    redirect_to user_path(current_user.id)
   end
 
   def show

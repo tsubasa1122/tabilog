@@ -18,6 +18,45 @@
 //= require gmaps/google
 //= require_tree .
 
+//フォロー非同期
+
+$(function() {
+    $(document).on("ajax:success", ".follow", function (e) {
+        var id = e.target.attributes[1].value;
+        $('.' + id).html(e.detail[2]["response"]);
+        $.ajax({
+            url: '/count',
+            type: 'get',
+            async: true,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+            }
+        })
+            .done(function (f) {
+                $('.my_follow').text(f);
+            })
+            .fail(function () {
+            })
+    })
+
+    $(document).on("ajax:success", ".user_show", function (e) {
+        $('.b').text(e.detail[0]);
+        if ($('.user_show').hasClass('now')) {
+            $('.user_show').removeClass('now').addClass('yet').text('フォローする');
+        } else {
+            $('.user_show').removeClass('yet').addClass('now').text('フォロー中');
+        }
+    })
+
+
+    $('html').click(function (e) {
+        if (!$(e.target).closest('.table_right, .this_follow, .this_follower').length) {
+            $('.table_right').removeClass('active');
+            $('.table_right').html('');
+        }
+    })
+})
+
 
 
 
@@ -38,7 +77,18 @@ $(function(){
         $(".menu__modal").hide();
     })
 })
+//お気に入りボタン
 
+$(function() {
+    $(document).on("ajax:success", ".fav", function(e) {
+        console.log(e);
+        if ($('#' + e.detail[0]).hasClass('heart')) {
+            $('#' + e.detail[0]).removeClass('heart');
+        } else {
+            $('#' + e.detail[0]).addClass('heart');
+        }
+    })
+})
 
 
 

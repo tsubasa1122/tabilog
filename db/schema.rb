@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_24_101029) do
+ActiveRecord::Schema.define(version: 2018_10_31_024440) do
 
   create_table "categories", force: :cascade do |t|
     t.string "category_name"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "evaluation_images", force: :cascade do |t|
+    t.string "image_id"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,11 +43,14 @@ ActiveRecord::Schema.define(version: 2018_10_24_101029) do
   end
 
   create_table "relationships", force: :cascade do |t|
-    t.integer "follwer_id"
-    t.integer "following_id"
+    t.integer "follower_id"
+    t.integer "followed_id"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
   create_table "review_photos", force: :cascade do |t|
@@ -55,6 +65,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_101029) do
     t.integer "evaluation_id"
     t.integer "user_id"
     t.integer "trip_id"
+    t.integer "evaluation_image_id"
     t.string "comment"
     t.string "month"
     t.datetime "timezone_start"

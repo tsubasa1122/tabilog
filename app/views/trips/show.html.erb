@@ -83,9 +83,7 @@
         <%= render "reviews/trip", review: review %>
       <% end %>
     </div>
-    <button class="more">もっとみる</button>
   </section>
-
 </div>
 
 
@@ -183,18 +181,6 @@
         $(document).on("click", ".review__wrapper" , function(){
             $('.review-registration').hide();
             $('.review__wrapper').hide();
-        })
-    })
-</script>
-<script>
-    $(function() {
-        $(document).on("ajax:success", ".fav", function(e) {
-            console.log(e);
-            if ($('#' + e.detail[0]).hasClass('heart')) {
-                $('#' + e.detail[0]).removeClass('heart');
-            } else {
-                $('#' + e.detail[0]).addClass('heart');
-            }
         })
     })
 </script>

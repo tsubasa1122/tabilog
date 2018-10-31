@@ -1,2 +1,22 @@
-<h1>Wannagos#index</h1>
-<p>Find me in app/views/wannagos/index.html.erb</p>
+<%= render "users/profile", user: @user %>
+<div class="wannagos">
+  <% @wannagos.each do |wannago| %>
+    <div class="wannago">
+      <div class="wannago__img"><%= image_tag '/images/carshare501IMGL2465_TP_V4 .jpg', :width=>'100%', :height=>'200px' %></div>
+      <div class="wannago__text">
+        <h3 class="place__name"><%= wannago.trip.place_name.truncate(15) %></h3>
+        <p class="place__detail"><%= wannago.trip.place_detail.truncate(40) %></p>
+      </div>
+      <div class="review__num">口コミ：<span><%= wannago.trip.reviews.count %></span></div>
+      <% if wannago.trip.wannagoed_by?(current_user) %>
+        <%= link_to wannago_trips_path(wannago.trip), class: "wanna", remote: true do %>
+          <button class="wannago-button" id="<%= wannago.trip.id %>"><%= image_tag "/images/wannago.png" %>行きたい</button>
+        <% end %>
+      <% else %>
+        <%= link_to wannago_trips_path(wannago.trip), class: "wanna", remote: true do  %>
+          <button class="wannago-button" id="<%= wannago.trip.id %>"><%= image_tag "/images/wannago.png" %>行きたい</button>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

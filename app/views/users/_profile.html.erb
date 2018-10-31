@@ -7,31 +7,30 @@
 
 <div class="profile-contents">
   <div class="profile-content">
-    <div class="username"><h1><%= user.name %></h1></div>
+    <div class="username">
+      <h1><%= user.name %></h1>
+      <% unless user.id == current_user.id %>
+        <% if current_user.following?(user) %>
+          <span><%= link_to "フォロー中", follow_path(user.id), remote: true, class: "follow now user_show", data: {"id" => user.id} %></span>
+        <% else %>
+          <span><%= link_to "フォローする", follow_path(user.id), remote: true, class: "follow yet user_show", data: {"id" => user.id} %></span>
+        <% end %>
+      <% end %>
+    </div>
     <div class="user__img"><%= attachment_image_tag user, :user_image, class: "img-circle pull-left profile-thumb", fallback: "/images/no_image.jpg"%></div>
     <div class="profile"><%= user.description %></div>
     <div class="follow__status">
       <div class="profile__follow">
-        <span class="follow__num">77</span>
+        <span class="follow__num"><%= link_to current_user.followers.count, tmp_path(current_user.id, "follower"), class: "my_follower forf", remote: true %></span>
         <span class="follow__text">フォロー</span>
       </div>
       <div class="profile__follower">
-        <span class="follower__num">77</span>
+        <span class="follower__num"><%= link_to current_user.followed_users.count, tmp_path(current_user.id, "follow"), class: "my_follow forf", remote: true %></span>
         <span class="follower__text">フォロワー</span>
       </div>
     </div>
   </div>
 </div>
+<hr>
 
-<div class="menu">
-  <div class="menu-inner">
-    <nav class="menu-nav">
-      <ul class="menu-ul">
-        <li class="menu-list">HOME</li>
-        <li class="menu-list">TRIP</li>
-        <li class="menu-list"></li>
-      </ul>
-    </nav>
-  </div>
-</div>
 

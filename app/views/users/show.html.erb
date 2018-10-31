@@ -1,2 +1,9 @@
 <%= render "users/profile", user: @user %>
 
+<section class="reviews">
+  <div class="review__box">
+    <% @reviews.each do |review| %>
+      <%= render "reviews/trip", review: review %>
+    <% end %>
+  </div>
+</section>

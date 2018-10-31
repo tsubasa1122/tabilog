@@ -21,6 +21,7 @@ class ReviewsController < ApplicationController
     @review = current_user.reviews.new(review_params)
     @review.trip_id = params[:trip_id]
     @review.save
+
     # puts @review.errors.full_messages
     params["review"]["review_photos_attributes"]["0"]["review_image"].size().times do |i|
       if i == 0
@@ -30,7 +31,9 @@ class ReviewsController < ApplicationController
         break
       end
       rp = ReviewPhoto.new(review_id: @review.id , review_image: params["review"]["review_photos_attributes"]["0"]["review_image"][i])
-      rp.save
+      if rp.save
+
+      end
     end
 
     render partial: 'trip', locals: {review: @review}

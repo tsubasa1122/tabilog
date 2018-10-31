@@ -1,0 +1,6 @@
+
+<% if current_user.following?(user) %>
+  <span><%= link_to "フォロー中", follow_path(user.id), remote: true, class: "follow now user_show", data: {"id" => user.id} %></span>
+<% else %>
+  <span><%= link_to "フォローする", follow_path(user.id), remote: true, class: "follow yet user_show", data: {"id" => user.id} %></span>
+<% end %>

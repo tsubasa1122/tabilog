@@ -62,6 +62,9 @@
           <%= link_to wannagos_path do %>
             <li>行きたい 一覧</li>
           <% end %>
+          <%= link_to new_trip_path do %>
+            <li>旅行先登録</li>
+          <% end %>
           <%= link_to user_path(current_user.id) ,method: :delete, data: {confirm: "本当に退会しますか？"} do %>
             <li>退会する</li>
           <% end %>

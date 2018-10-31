@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :evaluation
+  belongs_to :evaluation_image
   belongs_to :user
   belongs_to :trip
   has_many :favorites, dependent: :destroy

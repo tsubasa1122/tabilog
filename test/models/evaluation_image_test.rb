@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RelationshopsControllerTest < ActionDispatch::IntegrationTest
+class EvaluationImageTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
