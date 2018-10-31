@@ -2,12 +2,12 @@
   <div class="review">
     <div class="review__user__box">
     <%= link_to user_path(review.user.id) do %>
-      <%= attachment_image_tag  review.user , :user_image,  fallback: "/images/no_image.jpg"  %>
+      <%= attachment_image_tag  review.user , :user_image, class: "user__img", fallback: "/images/no_image.jpg"  %>
       <div class="user__detail">
         <p class="user__name"><%= review.user.name %></p>
     <% end %>
         <span class="evaluation__name"><%= review.evaluation.evaluation_name %></span>
-        <span class="evaluation__num">星3つ</span>
+        <span class="evaluation__num"><%= attachment_image_tag review.evaluation_image, :image %></span>
       </div>
     </div>
     <div class="trip__date">

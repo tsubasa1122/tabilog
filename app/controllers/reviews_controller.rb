@@ -21,6 +21,7 @@ class ReviewsController < ApplicationController
     @review = current_user.reviews.new(review_params)
     @review.trip_id = params[:trip_id]
     @review.save
+    puts @review.errors.full_messages
 
     # puts @review.errors.full_messages
     params["review"]["review_photos_attributes"]["0"]["review_image"].size().times do |i|
@@ -47,7 +48,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:evaluation_id, :trip_id, :user_id, :comment, :month, :timezone_start, :timezone_end, :deleted_at )
+    params.require(:review).permit( :evaluation_image_id, :evaluation_id, :trip_id, :user_id, :comment, :month, :timezone_start, :timezone_end, :deleted_at )
   end
 
 end

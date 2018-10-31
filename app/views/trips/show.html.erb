@@ -3,7 +3,6 @@
   <section class="trip-summary">
     <div class="trip-summary__content">
       <h1 class="place__title"><%= @trip.place_name %></h1>
-      <div class="trip-summary__popularity"><%= image_tag "/images/BE107FAC-D706-48DF-912B-4BD2C11B41F7.jpg" %>人がオススメしています</div>
     </div>
     <div class="trip-summary__actions">
       <% if @trip.wannagoed_by?(current_user) %>
@@ -25,6 +24,13 @@
       <div class="form">
         <%= f.label :evaluation_id, "カテゴリー" %>
         <%= f.collection_select(:evaluation_id, @evaluations, :id , :evaluation_name , prompt: "選択してください")  %>
+      </div>
+      <div class="form-radio">
+        <%= f.label :evaluation_image_id, "評価" %>
+        <% @evaluation_images.each do |ei| %>
+          <input type="radio" id="<%= ei.id.to_i %>" value="<%= ei.id.to_i %>" name="review[evaluation_image_id]">
+          <label for="<%= ei.id.to_i %>"><%= attachment_image_tag ei, :image %></label>
+        <% end %>
       </div>
       <div class="form-group">
         <%= f.label :comment, "詳細" %>
@@ -77,7 +83,7 @@
     </dl>
   </section>
   <section class="reviews">
-    <h2 class="review__title">口コミ（<span color="FFB900"><%= @reviews.count %></span>）</h2>
+    <h2 class="review__title">口コミ（<span class="review__count" color="FFB900"><%= @reviews.count %></span>）</h2>
     <div class="review__box">
       <% @reviews.each do |review| %>
         <%= render "reviews/trip", review: review %>
@@ -167,7 +173,6 @@
             $('.review-registration').hide();
             $('.review__wrapper').hide();
         })
-
         $(document).on('click', 'input[type=submit]', function() {
             if ($('input[type=text]').val() == '') {
                 return false;
@@ -184,17 +189,17 @@
         })
     })
 </script>
-
-
 <script>
     $(function() {
         $(document).on("ajax:success", ".wanna", function(e) {
-            console.log(e);
             if ($('#' + e.detail[0]).hasClass('heart')) {
                 $('#' + e.detail[0]).removeClass('heart');
             } else {
                 $('#' + e.detail[0]).addClass('heart');
             }
+            var count = $('.review').length;
+            alert("aaa");
+            $(".review__count").text(count);
         })
     })
 </script>

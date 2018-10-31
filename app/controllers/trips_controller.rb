@@ -43,12 +43,14 @@ class TripsController < ApplicationController
     @review_photos = ReviewPhoto.where(review_id: @reviews.ids )
     # puts @img
     @evaluations = Evaluation.all
+    @evaluation_images = EvaluationImage.all
     @review = Review.new
     @review.review_photos.build
   end
 
   def index
     @trips = Trip.all
+    @trip_photos = TripPhoto.all
   end
 
   private

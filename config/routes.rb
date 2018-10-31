@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'home#top'
+  post "/homes" => "home#create" ,as: "homes"
   get '/about' => "home#about"
   devise_for :users, controllers: {
       sessions:      'users/sessions',

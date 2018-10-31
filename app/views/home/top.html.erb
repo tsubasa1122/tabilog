@@ -112,6 +112,11 @@
   </div>
 </div>
 
+<%= form_for @evaluation_image ,url: homes_path do |f| %>
+  <%= f.attachment_field :image %>
+  <%= f.submit "投稿" %>
+<% end %>
+
 
 
 

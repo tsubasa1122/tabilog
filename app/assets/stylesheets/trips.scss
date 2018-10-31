@@ -4,7 +4,7 @@
 
 //indexページ
 .title__box{
-  width: 80%;
+  width: 90%;
   height: 30px;
   margin: 0 auto;
   .area__title{
@@ -19,12 +19,12 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 24px auto 0;
-  width: 80%;
+  width: 90%;
   .trip {
     border: solid 1px #e0e2e3;
     border-radius: 15px;
     padding-bottom: 24px;
-    width: 23%;
+    width: 20%;
     height: 400px;
     box-sizing: border-box;
     float: left;
@@ -79,10 +79,11 @@
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     width: 100%;
+    height: 200px;
   }
-}
-.trip:hover{
-  box-shadow: 6px 6px 6px 1px rgba(141,147,150,0.3);
+  .trip:hover{
+    box-shadow: 6px 6px 6px 1px rgba(141,147,150,0.3);
+  }
 }
 
 
@@ -208,6 +209,13 @@ hr{
       display: block;
       width: 100%;
       position: relative;
+      .user__img{
+        width: 40px;
+        height: 40px;
+        -webkit-border-radius: 40px;
+        -moz-border-radius: 40px;
+        border-radius: 40px;
+      }
       .user__detail{
         display: block;
         flex-wrap: wrap;
@@ -264,14 +272,7 @@ hr{
     font-size: 0.75rem;
   }
 }
-.review__user__box img{
-  width: 40px;
-  height: 40px;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  border-radius: 40px;
 
-}
 .review__image img{
   width: 78px;
   height: 78px;
@@ -626,4 +627,7 @@ hr{
   border: 1px solid #eee;
   text-align: right;
   z-index: 1000;
+}
+.form-radio{
+  text-align: left;
 }
