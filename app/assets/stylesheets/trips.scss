@@ -25,7 +25,7 @@
     border-radius: 15px;
     padding-bottom: 24px;
     width: 20%;
-    height: 400px;
+    height: 380px;
     box-sizing: border-box;
     float: left;
     text-align: left;
@@ -64,7 +64,7 @@
       border-color: #d5d5d8;
       color: #6c6c75;
       background-color: #ffffff;
-      padding: 5px 17px;
+      padding: 6px 28px;
       border-radius: 4px;
       margin: 10px 0px 0 65px;
     }
@@ -123,7 +123,7 @@
       border-color: #d5d5d8;
       color: #6c6c75;
       background-color: #ffffff;
-      padding: 5px 17px;
+      padding: 6px 28px;
       border-radius: 4px;
       font-size: 0.75rem;
     }
@@ -203,7 +203,7 @@ hr{
     margin-top: 20px;
     text-align: left;
     border-bottom: 1px solid #d5d5d8;
-    padding: 0 0 12px;
+    padding: 0 0 35px;
     position: relative;
     .review__user__box{
       display: block;
@@ -632,4 +632,17 @@ hr{
 }
 .form-radio{
   text-align: left;
+}
+.fav__button{
+  text-align: center;
+  float: right;
+  width: 18%;
+  display: block;
+  font-size: 0.85rem;
+}
+.fav__button i{
+  color: #ffb900;
+  border: 1px solid #ffb900;
+  padding: 8px 18px;
+  border-radius: 4px;
 }

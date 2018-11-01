@@ -82,5 +82,15 @@ $(function() {
     })
 })
 
+$(function() {
+    $(document).on("ajax:success", ".wanna", function(e) {
+        if ($('.' + e.detail[0] + "wanna").hasClass('heart')) {
+            $('.' + e.detail[0] + "wanna").removeClass('heart');
+        } else {
+            $('.' + e.detail[0]+ "wanna").addClass('heart');
+        }
+    })
+})
+
 
 

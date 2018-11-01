@@ -6,11 +6,11 @@
     <div class="trip-summary__actions">
       <% if @trip.wannagoed_by?(current_user) %>
         <%= link_to wannago_trips_path(@trip), class: "wanna", remote: true do %>
-          <button class="wannago" id="<%= @trip.id %>"><%= image_tag "/images/wannago.png" %>行きたい</button>
+          <button class='wannago <%= "#{@trip.id}wanna" %>'<%= image_tag "/images/wannago.png" %>行きたい</button>
         <% end %>
       <% else %>
         <%= link_to wannago_trips_path(@trip), class: "wanna", remote: true do  %>
-          <button class="wannago" id="<%= @trip.id %>"><%= image_tag "/images/wannago.png" %>行きたい</button>
+          <button class='wannago <%= "#{@trip.id}wanna" %>'<%= image_tag "/images/wannago.png" %>行きたい</button>
         <% end %>
       <% end %>
       <button class="contribution" id="modal-open"><%= image_tag "/images/contribution.png" %>投稿</button>
@@ -183,17 +183,6 @@
         $(document).on("click", ".review__wrapper" , function(){
             $('.review-registration').hide();
             $('.review__wrapper').hide();
-        })
-    })
-</script>
-<script>
-    $(function() {
-        $(document).on("ajax:success", ".wanna", function(e) {
-            if ($('#' + e.detail[0]).hasClass('heart')) {
-                $('#' + e.detail[0]).removeClass('heart');
-            } else {
-                $('#' + e.detail[0]).addClass('heart');
-            }
         })
     })
 </script>

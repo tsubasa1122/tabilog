@@ -4,34 +4,23 @@
 <div class="trips">
   <% @trips.each do |trip| %>
     <div class="trip">
-          <div class="trip__img" >
-            <div class="slide">
-            <% @trip_photos.where(trip_id: trip.id).each do |tp| %>
-              <%= attachment_image_tag tp , :trip_image ,fallback: "/images/no_image.jpg" %>
-            <% end %>
-            </div>
-          </div>
-      <%= link_to trip_path(trip.id) do %>
-    <div class="trip__text">
-          <h3 class="place__name"><%= trip.place_name.truncate(15) %></h3>
-          <p class="place__detail"><%= trip.place_detail.truncate(40) %></p>
+      <div class="trip__img" >
+        <div class="slide">
+        <% @trip_photos.where(trip_id: trip.id).each do |tp| %>
+          <%= attachment_image_tag tp , :trip_image ,fallback: "/images/no_image.jpg" %>
+        <% end %>
         </div>
-        <div class="review__num">口コミ：<span><%= trip.reviews.count %></span></div>
-        <% if trip.wannagoed_by?(current_user) %>
-          <%= link_to wannago_trips_path(trip), class: "wanna", remote: true do %>
-            <button class="wannago-button" id="<%= trip.id %>"><%= image_tag "/images/wannago.png" %>行きたい</button>
-          <% end %>
-        <% else %>
-          <%= link_to wannago_trips_path(trip), class: "wanna", remote: true do  %>
-            <button class="wannago-button" id="<%= trip.id %>"><%= image_tag "/images/wannago.png" %>行きたい</button>
-          <% end %>
-        <% end %>
-        <% end %>
+      </div>
+    <%= link_to trip_path(trip.id) do %>
+        <div class="trip__text">
+            <h3 class="place__name"><%= trip.place_name.truncate(15) %></h3>
+            <p class="place__detail"><%= trip.place_detail.truncate(40) %></p>
+        </div>
+            <div class="review__num">口コミ：<span><%= trip.reviews.count %></span></div>
     </div>
+    <% end %>
   <% end %>
 </div>
-
-
 <script>
     $(document).ready(function(){
         $('.slide').slick({

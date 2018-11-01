@@ -9,7 +9,7 @@
     margin-top: 20px;
     text-align: left;
     border-bottom: 1px solid #d5d5d8;
-    padding: 0 0 12px;
+    padding: 0 0 35px;
     position: relative;
     .favorite__user__box{
       display: block;
@@ -83,4 +83,17 @@
     height: 78px;
     display: flex;
   }
+}
+.fav__button{
+  text-align: center;
+  float: right;
+  width: 18%;
+  display: block;
+  font-size: 0.85rem;
+}
+.fav__button i{
+  color: #ffb900;
+  border: 1px solid #ffb900;
+  padding: 8px 18px;
+  border-radius: 4px;
 }

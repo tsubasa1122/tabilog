@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   get '/follow/:id' => 'relationships#follow', as: 'follow'
   get '/count' => 'relationships#count', as: 'count'
   resources :trips, only: [:new, :create, :show, :edit, :update, :destroy] do
-    resources :reviews, only: [ :index, :create, :destroy]
+    resources :reviews, only: [ :create, :destroy]
   end
   # お気に入り非同期のroute
   get "reviews/favorite/:id" => "reviews#favorite" , as:"favorite_reviews"

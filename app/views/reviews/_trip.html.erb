@@ -1,42 +1,39 @@
-
-  <div class="review">
-    <div class="review__user__box">
-    <%= link_to user_path(review.user.id) do %>
-      <%= attachment_image_tag  review.user , :user_image, class: "user__img", fallback: "/images/no_image.jpg"  %>
-      <div class="user__detail">
-        <p class="user__name"><%= review.user.name %></p>
-    <% end %>
-        <span class="evaluation__name"><%= review.evaluation.evaluation_name %></span>
-        <span class="evaluation__num"><%= attachment_image_tag review.evaluation_image, :image %></span>
-      </div>
+<div class="review">
+  <div class="review__user__box">
+  <%= link_to user_path(review.user.id) do %>
+    <%= attachment_image_tag  review.user , :user_image, class: "user__img", fallback: "/images/no_image.jpg"  %>
+    <div class="user__detail">
+      <p class="user__name"><%= review.user.name %></p>
+  <% end %>
+      <span class="evaluation__name"><%= review.evaluation.evaluation_name %></span>
+      <span class="evaluation__num"><%= attachment_image_tag review.evaluation_image, :image %></span>
     </div>
-    <div class="trip__date">
-      <span class="trip__month"><%= review.month %></span>
-      <span>時間帯：</span>
-      <span class="trip__time"><%= review.timezone_start.strftime('%H') %>時〜</span>
-      <span class="trip__time"><%= review.timezone_end.strftime('%H') %>時</span>
-    </div>
-    <p class="review__text"><%= review.comment %></p>
-    <% review.review_photos.each do |rp| %>
-      <div class="review__image">
-        <%= attachment_image_tag rp , :review_image %>
-      </div>
-    <% end %>
-    <span class="review__date"><%= review.created_at.strftime('%Y年%m月%d日')  %></span>
-
-    <% if review.favorited_by?(current_user) %>
-      <sapn>
-        <%= link_to favorite_reviews_path(review), class: "fav", remote: true do %>
-          <i class='fa fa-heart-o <%= "#{review.id}fav" %>' >お気に入り</i>
-        <% end %>
-      </sapn>
-    <% else %>
-      <sapn>
-        <%= link_to favorite_reviews_path(review), class: "fav", remote: true do %>
-          <i class='fa fa-heart-o <%= "#{review.id}fav" %>' >お気に入り</i>
-        <% end %>
-      </sapn>
-    <% end %>
-    <% if review.user_id == current_user.id %>
-    <% end %>
   </div>
+  <div class="trip__date">
+    <span class="trip__month"><%= review.month %></span>
+    <span>時間帯：</span>
+    <span class="trip__time"><%= review.timezone_start.strftime('%H') %>時〜</span>
+    <span class="trip__time"><%= review.timezone_end.strftime('%H') %>時</span>
+  </div>
+  <p class="review__text"><%= review.comment %></p>
+  <% review.review_photos.each do |rp| %>
+    <div class="review__image">
+      <%= attachment_image_tag rp , :review_image %>
+    </div>
+  <% end %>
+  <span class="review__date"><%= review.created_at.strftime('%Y年%m月%d日')  %></span>
+
+  <% if review.favorited_by?(current_user) %>
+    <sapn class="fav__button">
+      <%= link_to favorite_reviews_path(review), class: "fav", remote: true do %>
+        <i class='fa fa-heart-o <%= "#{review.id}fav" %>' >お気に入り</i>
+      <% end %>
+    </sapn>
+  <% else %>
+    <sapn class="fav__button">
+      <%= link_to favorite_reviews_path(review), class: "fav", remote: true do %>
+        <i class='fa fa-heart-o <%= "#{review.id}fav" %>' >お気に入り</i>
+      <% end %>
+    </sapn>
+  <% end %>
+</div>
