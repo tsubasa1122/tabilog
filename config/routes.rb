@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   get '/about' => "home#about"
   get '/trip/:id' => 'trips#index', as: 'trip_index'
 
-
-
   devise_for :users, controllers: {
       sessions:      'users/sessions',
       passwords:     'users/passwords',
@@ -21,7 +19,7 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index]
   resources :wannagos, only: [:index]
   get "/followers/:id" => "relationships#followers", as: "followers"
-  get "/followings/:id" => "relationshoips#followings", as: "followings"
+  get "/followings/:id" => "relationships#followings", as: "followings"
   get '/tmp/:dareno/:dotti' => 'relationships#tmp', as: 'tmp'
   get '/follow/:id' => 'relationships#follow', as: 'follow'
   get '/count' => 'relationships#count', as: 'count'

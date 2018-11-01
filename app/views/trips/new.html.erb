@@ -2,7 +2,6 @@
 <div class="trip-registration">
   <%= form_for(@trip , :url => {:controller => :trips, :action => :create} ) do |f| %>
   <div class="form">
-    /trips/:trip_id/reviews
       <%= f.label :place_name, "観光地" %>
       <%= f.text_field :place_name, autofocus: true, autocomplete: "place_name", placeholder: "観光地名(例：日光東照宮)" %>
     </div>

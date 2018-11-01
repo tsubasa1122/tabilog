@@ -23,16 +23,20 @@
       </div>
     <% end %>
     <span class="review__date"><%= review.created_at.strftime('%Y年%m月%d日')  %></span>
+
     <% if review.favorited_by?(current_user) %>
-      <%= link_to favorite_reviews_path(review), class: "fav", remote: true do %>
-        <button class="favorite-button" id="<%= review.id %>"><i class="fa fa-heart-o" ></i>お気に入り</button>
-      <% end %>
+      <sapn>
+        <%= link_to favorite_reviews_path(review), class: "fav", remote: true do %>
+          <i class='fa fa-heart-o <%= "#{review.id}fav" %>' >お気に入り</i>
+        <% end %>
+      </sapn>
     <% else %>
-      <%= link_to favorite_reviews_path(review), class: "fav", remote: true do %>
-        <button class="favorite-button" id="<%= review.id %>"><i class="fa fa-heart-o" ></i>お気に入り</button>
-      <% end %>
+      <sapn>
+        <%= link_to favorite_reviews_path(review), class: "fav", remote: true do %>
+          <i class='fa fa-heart-o <%= "#{review.id}fav" %>' >お気に入り</i>
+        <% end %>
+      </sapn>
     <% end %>
     <% if review.user_id == current_user.id %>
-      <%= link_to 削除する, trip_review_path(trip.id), method: :delete, data: {confirm: "本当に削除しますか？"} %>
     <% end %>
   </div>

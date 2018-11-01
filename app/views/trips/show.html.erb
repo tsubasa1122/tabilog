@@ -52,7 +52,7 @@
         <% end %>
       </div>
       <div class="action">
-        <%= f.submit "登録", class: "registration_btn" %>
+        <%= f.submit "登録", class:"asdf" %>
       </div>
     <% end %>
   </div>
@@ -168,9 +168,10 @@
             $('#review_review_photos_attributes_0_review_image').val('');
             $('.review-registration').hide();
             $('.review__wrapper').hide();
+            $('.review__count').text($('.review').length)
         })
         $(document).on('click', 'input[type=submit]', function() {
-            if ($('input[type=text]').val() == '') {
+            if ($('.main-modal input[type=text]').val() == '') {
                 return false;
             }
         })

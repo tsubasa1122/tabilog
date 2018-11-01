@@ -72,12 +72,12 @@ $(function(){
 //お気に入りボタン
 
 $(function() {
-    $(document).on("click", ".fav", function(e) {
+    $(document).on("ajax:success", ".fav", function(e) {
         console.log(e);
-        if ($("favorite-button").hasClass('heart')) {
-            $("favorite-button").removeClass('heart');
+        if ($("."+e.detail[0]+"fav").hasClass('heart')) {
+            $("."+e.detail[0]+"fav").removeClass('heart');
         } else {
-            $("favorite-button").addClass('heart');
+            $("."+e.detail[0]+"fav").addClass('heart');
         }
     })
 })

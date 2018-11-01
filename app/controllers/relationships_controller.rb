@@ -26,10 +26,16 @@ class RelationshipsController < ApplicationController
   end
 
   def followers
-
+    @user = User.find(params[:id])
+    relationship = Relationship.where(follower_id: @user.id)
+    b = relationship.pluck(:followed_id)
+    @followers = User.where(id: b).page(params[:page]).reverse_order.per(30)
   end
 
   def followings
-
+    @user = User.find(params[:id])
+    relationship = Relationship.where(followed_id: @user.id)
+    c = relationship.pluck(:follower_id)
+    @followings = User.where(id: c).page(params[:page]).reverse_order.per(30)
   end
 end

@@ -28,13 +28,11 @@
       <% end %>
       <span class="review__date"><%= favorite.review.created_at.strftime('%Y年%m月%d日')  %></span>
       <% if favorite.review.favorited_by?(current_user) %>
-        <%= link_to favorite_reviews_path(favorite.review), class: "fav", remote: true do %>
-          <button class="favorite-button" id="<%= favorite.review.id %>"><i class="fa fa-heart-o" ></i>お気に入り</button>
-        <% end %>
-      <% else %>
-        <%= link_to favorite_reviews_path(favorite.review), class: "fav", remote: true do %>
-          <button class="favorite-button" id="<%= favorite.review.id %>"><i class="fa fa-heart-o" ></i>お気に入り</button>
-        <% end %>
+        <sapn>
+          <%= link_to favorite_reviews_path(favorite.review), class: "fav", remote: true do %>
+            <i class='fa fa-heart-o <%= "#{favorite.review.id}fav" %>' >お気に入り</i>
+          <% end %>
+        </sapn>
       <% end %>
     </div>
   <% end %>

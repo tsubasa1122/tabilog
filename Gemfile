@@ -10,6 +10,7 @@ gem "webpacker"
 gem "gmaps4rails"
 gem "geocoder"
 gem "font-awesome-rails"
+gem "kaminari"
 gem 'paranoia', '~> 2.3', '>= 2.3.1'
 
 

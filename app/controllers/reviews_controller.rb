@@ -36,7 +36,6 @@ class ReviewsController < ApplicationController
 
       end
     end
-
     render partial: 'trip', locals: {review: @review}
 
   end

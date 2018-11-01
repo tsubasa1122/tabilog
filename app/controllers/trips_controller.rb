@@ -46,18 +46,24 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user_id = current_user.id
     # puts @trip.errors.full_messages
-    @trip.save
-    params["trip"]["trip_photos_attributes"]["0"]["trip_image"].size().times do |i|
-      if i == 0
-        next
+    if @trip.save
+      params["trip"]["trip_photos_attributes"]["0"]["trip_image"].size().times do |i|
+        if i == 0
+          next
+        end
+        if i == 6
+          break
+        end
+        tp = TripPhoto.new(trip_id: @trip.id, trip_image: params["trip"]["trip_photos_attributes"]["0"]["trip_image"][i])
+        tp.save
       end
-      if i == 6
-        break
-      end
-      tp = TripPhoto.new(trip_id: @trip.id, trip_image: params["trip"]["trip_photos_attributes"]["0"]["trip_image"][i])
-      tp.save
+      redirect_to trip_path(@trip.id)
+    else
+      @categories = Category.all
+      @trip = Trip.new
+      @trip.trip_photos.build
+      render :new
     end
-    redirect_to trip_path(@trip.id)
   end
 
   def edit

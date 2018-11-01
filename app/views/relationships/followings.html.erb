@@ -1,0 +1,18 @@
+<%= render "users/profile", user: @user %>
+<div class="follower">
+  <div class="container">
+    <% @followings.each do |following| %>
+      <div class="follower__user">
+        <%= link_to user_path(following.id), class:"user__show" do %>
+          <div class="user__img">
+            <%= attachment_image_tag following, :user_image, fallback: "/images/no_image.jpg"  %>
+          </div>
+          <div class="user__profile">
+            <p class="user__name"><%= following.name %></p>
+            <p class="user__account"><%= following.account_name %></p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
