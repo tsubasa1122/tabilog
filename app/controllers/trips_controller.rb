@@ -5,6 +5,16 @@ class TripsController < ApplicationController
     @trip.trip_photos.build
   end
 
+  def index
+    @trip_photos = TripPhoto.all
+    if params[:id] == 'aa'
+      @trips = Trip.page params[:page]
+      @trips = @trips.search(s_title: params[:s_title]) if params[:s_title].present?
+    else
+      @trips = Trip.where('trips.address LIKE ?', "%#{params[:id]}%")
+    end
+  end
+
   def wannago
     trip = Trip.find(params[:id])
     if trip.wannagoed_by?(current_user)
@@ -20,8 +30,9 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
-    @trip.save
+    @trip.user_id = current_user.id
     # puts @trip.errors.full_messages
+    @trip.save
     params["trip"]["trip_photos_attributes"]["0"]["trip_image"].size().times do |i|
       if i == 0
         next
@@ -32,7 +43,7 @@ class TripsController < ApplicationController
       tp = TripPhoto.new(trip_id: @trip.id, trip_image: params["trip"]["trip_photos_attributes"]["0"]["trip_image"][i])
       tp.save
     end
-    redirect_to user_path(current_user.id)
+    redirect_to trip_path(@trip.id)
   end
 
   def show
@@ -48,15 +59,26 @@ class TripsController < ApplicationController
     @review.review_photos.build
   end
 
-  def index
-    @trips = Trip.all
-    @trip_photos = TripPhoto.all
+  def edit
+    @trip = Trip.find(params[:id])
+    @categories = Category.all
+    @trip.trip_photos.build
+  end
+
+  def update
+    @trip = Trip.find(params[:id])
+    if @trip.update(trip_params)
+      redirect_to trip_path(@trip.id)
+    else
+      @trip = Trip.find(params[:id])
+      render :edit
+    end
   end
 
   private
 
   def trip_params
 
-    params.require(:trip).permit(:address, :start_time, :end_time, :place_name, :place_detail, :telephone_number, :category_id, :latitude, :longitude, :business_hours,:regular_holiday ,:deleted_at)
+    params.require(:trip).permit(:user_id, :address, :start_time, :end_time, :place_name, :place_detail, :telephone_number, :category_id, :latitude, :longitude, :business_hours,:regular_holiday ,:deleted_at)
   end
 end

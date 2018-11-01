@@ -10,8 +10,8 @@
 <div class="main-contents">
   <div class="search clearfix">
     <div class="search__bar">
-        <form action="<%= trips_path('aa') %>" method="get" class="form-inline">
-          <input type="text" id="search__bar" name="s_title" required size="10" placeholder=" 商品名やアーティスト名で検索" value="<%= request[:s_title] %>">
+        <form action="<%= trip_index_path('aa') %>" method="get" class="form-inline">
+          <input type="text" id="search__bar" name="s_title" required size="10" placeholder=" 観光地名や住所で検索" value="<%= request[:s_title] %>">
           <button  class="search__button" type="submit">
             <span class="search__button__txt" ><%= image_tag "/images/search.png", alt:"" %> 検索</span>
           </button>
@@ -23,95 +23,88 @@
         <section class="area-selector__region">
           <h3 class="area-selector__region-name">関東</h3>
           <ul class="area-selector__areas">
-            <li class="area-selector__area">東京</li>
-            <li class="area-selector__area">神奈川</li>
-            <li class="area-selector__area">埼玉</li>
-            <li class="area-selector__area">千葉</li>
-            <li class="area-selector__area">栃木</li>
-            <li class="area-selector__area">茨城</li>
-            <li class="area-selector__area">群馬</li>
+            <li class="area-selector__area"><%= link_to "東京", trip_index_path("東京") %></li>
+            <li class="area-selector__area"><%= link_to "神奈川", trip_index_path("神奈川") %></li>
+            <li class="area-selector__area"><%= link_to "埼玉", trip_index_path("埼玉") %></li>
+            <li class="area-selector__area"><%= link_to "千葉", trip_index_path("千葉") %></li>
+            <li class="area-selector__area"><%= link_to "栃木", trip_index_path("栃木") %></li>
+            <li class="area-selector__area"><%= link_to "茨城", trip_index_path("茨城") %></li>
+            <li class="area-selector__area"><%= link_to "群馬", trip_index_path("群馬") %></li>
           </ul>
         </section>
         <section class="area-selector__region">
           <h3 class="area-selector__region-name">関西</h3>
           <ul class="area-selector__areas">
-            <li class="area-selector__area">大阪</li>
-            <li class="area-selector__area">兵庫</li>
-            <li class="area-selector__area">京都</li>
-            <li class="area-selector__area">滋賀</li>
-            <li class="area-selector__area">奈良</li>
-            <li class="area-selector__area">和歌山</li>
+            <li class="area-selector__area"><%= link_to "大阪", trip_index_path("大阪") %></li>
+            <li class="area-selector__area"><%= link_to "兵庫", trip_index_path("兵庫") %></li>
+            <li class="area-selector__area"><%= link_to "京都", trip_index_path("京都") %></li>
+            <li class="area-selector__area"><%= link_to "滋賀", trip_index_path("滋賀") %></li>
+            <li class="area-selector__area"><%= link_to "奈良", trip_index_path("奈良") %></li>
+            <li class="area-selector__area"><%= link_to "和歌山", trip_index_path("和歌山") %></li>
           </ul>
         </section>
         <section class="area-selector__region">
           <h3 class="area-selector__region-name">九州・沖縄</h3>
           <ul class="area-selector__areas">
-            <li class="area-selector__area">福岡</li>
-            <li class="area-selector__area">佐賀</li>
-            <li class="area-selector__area">長崎</li>
-            <li class="area-selector__area">熊本</li>
-            <li class="area-selector__area">大分</li>
-            <li class="area-selector__area">宮崎</li>
-            <li class="area-selector__area">鹿児島</li>
-            <li class="area-selector__area">沖縄</li>
+            <li class="area-selector__area"><%= link_to "福岡", trip_index_path("福岡") %></li>
+            <li class="area-selector__area"><%= link_to "佐賀", trip_index_path("佐賀") %></li>
+            <li class="area-selector__area"><%= link_to "長崎", trip_index_path("長崎") %></li>
+            <li class="area-selector__area"><%= link_to "熊本", trip_index_path("熊本") %></li>
+            <li class="area-selector__area"><%= link_to "大分", trip_index_path("大分") %></li>
+            <li class="area-selector__area"><%= link_to "宮崎", trip_index_path("宮崎") %></li>
+            <li class="area-selector__area"><%= link_to "鹿児島", trip_index_path("鹿児島") %></li>
+            <li class="area-selector__area"><%= link_to "沖縄", trip_index_path("沖縄") %></li>
           </ul>
         </section>
         <section class="area-selector__region">
           <h3 class="area-selector__region-name">北海道・東北</h3>
           <ul class="area-selector__areas">
-            <li class="area-selector__area">北海道</li>
-            <li class="area-selector__area">青森</li>
-            <li class="area-selector__area">秋田</li>
-            <li class="area-selector__area">山形</li>
-            <li class="area-selector__area">岩手</li>
-            <li class="area-selector__area">宮崎</li>
-            <li class="area-selector__area">福島</li>
+            <li class="area-selector__area"><%= link_to "北海道", trip_index_path("北海道") %></li>
+            <li class="area-selector__area"><%= link_to "青森", trip_index_path("青森") %></li>
+            <li class="area-selector__area"><%= link_to "秋田", trip_index_path("秋田") %></li>
+            <li class="area-selector__area"><%= link_to "山形", trip_index_path("山形") %></li>
+            <li class="area-selector__area"><%= link_to "岩手", trip_index_path("岩手") %></li>
+            <li class="area-selector__area"><%= link_to "宮城", trip_index_path("宮城") %></li>
+            <li class="area-selector__area"><%= link_to "福島", trip_index_path("福島") %></li>
           </ul>
         </section>
         <section class="area-selector__region">
           <h3 class="area-selector__region-name">東海</h3>
           <ul class="area-selector__areas">
-            <li class="area-selector__area">愛知</li>
-            <li class="area-selector__area">岐阜</li>
-            <li class="area-selector__area">静岡</li>
-            <li class="area-selector__area">三重</li>
+            <li class="area-selector__area"><%= link_to "愛知", trip_index_path("愛知") %></li>
+            <li class="area-selector__area"><%= link_to "岐阜", trip_index_path("岐阜") %></li>
+            <li class="area-selector__area"><%= link_to "静岡", trip_index_path("静岡") %></li>
+            <li class="area-selector__area"><%= link_to "三重", trip_index_path("三重") %></li>
           </ul>
         </section>
         <section class="area-selector__region">
           <h3 class="area-selector__region-name">中国・四国</h3>
           <ul class="area-selector__areas">
-            <li class="area-selector__area">岡山</li>
-            <li class="area-selector__area">広島</li>
-            <li class="area-selector__area">鳥取</li>
-            <li class="area-selector__area">島根</li>
-            <li class="area-selector__area">山口</li>
-            <li class="area-selector__area">香川</li>
-            <li class="area-selector__area">徳島</li>
-            <li class="area-selector__area">愛媛</li>
-            <li class="area-selector__area">高知</li>
+            <li class="area-selector__area"><%= link_to "岡山", trip_index_path("岡山") %></li>
+            <li class="area-selector__area"><%= link_to "広島", trip_index_path("広島") %></li>
+            <li class="area-selector__area"><%= link_to "鳥取", trip_index_path("鳥取") %></li>
+            <li class="area-selector__area"><%= link_to "島根", trip_index_path("島根") %></li>
+            <li class="area-selector__area"><%= link_to "山口", trip_index_path("山口") %></li>
+            <li class="area-selector__area"><%= link_to "香川", trip_index_path("香川") %></li>
+            <li class="area-selector__area"><%= link_to "徳島", trip_index_path("徳島") %></li>
+            <li class="area-selector__area"><%= link_to "愛媛", trip_index_path("愛媛") %></li>
+            <li class="area-selector__area"><%= link_to "高知", trip_index_path("高知") %></li>
           </ul>
         </section>
         <section class="area-selector__region">
           <h3 class="area-selector__region-name">甲信越・北陸</h3>
           <ul class="area-selector__areas">
-            <li class="area-selector__area">山梨</li>
-            <li class="area-selector__area">長野</li>
-            <li class="area-selector__area">新潟</li>
-            <li class="area-selector__area">富山</li>
-            <li class="area-selector__area">石川</li>
-            <li class="area-selector__area">福井</li>
+            <li class="area-selector__area"><%= link_to "山梨", trip_index_path("山梨") %></li>
+            <li class="area-selector__area"><%= link_to "長野", trip_index_path("長野") %></li>
+            <li class="area-selector__area"><%= link_to "新潟", trip_index_path("新潟") %></li>
+            <li class="area-selector__area"><%= link_to "富山", trip_index_path("富山") %></li>
+            <li class="area-selector__area"><%= link_to "石川", trip_index_path("石川") %></li>
+            <li class="area-selector__area"><%= link_to "福井", trip_index_path("福井") %></li>
           </ul>
         </section>
       </div>
     </div>
   </div>
-  <div class="new-arrivals">
-    <h1 class="content__title">新着の口コミ</h1>
-   <div id="#map"(style="width: 100% ,height: 200px" )>
-  </div>
-  </div>
-</div>
-
 <%= form_for @evaluation_image ,url: homes_path do |f| %>
   <%= f.attachment_field :image %>
   <%= f.submit "投稿" %>

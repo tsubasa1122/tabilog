@@ -4,7 +4,7 @@ module SearchTrip
 
   included do
     scope :search_title, lambda { |keyword|
-      where("(trips.place_name LIKE :keyword) OR (trips.address LIKE :keyword) )", keyword: "%#{sanitize_sql_like(keyword)}%") if keyword.present?
+      where("(trips.place_name LIKE :keyword) OR (trips.address LIKE :keyword )", keyword: "%#{sanitize_sql_like(keyword)}%") if keyword.present?
     }
     scope :search, lambda { |s|
       r = self

@@ -1,9 +1,11 @@
 class Trip < ApplicationRecord
+  include SearchTrip
   geocoded_by :address
   after_validation :geocode
 
   # バリデーション
   validates :place_detail,  length: {maximum: 300}
+
 
 
 
@@ -13,6 +15,7 @@ class Trip < ApplicationRecord
   has_many :wannagos, dependent: :destroy
   has_many :trip_photos, dependent: :destroy
   belongs_to :category
+  belongs_to :user
   accepts_nested_attributes_for :trip_photos
   # 画像投稿
   accepts_attachments_for :trip_photos, attachment: :trip_image

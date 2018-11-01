@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 2018_10_31_024440) do
     t.string "telephone_number"
     t.string "address"
     t.integer "category_id"
+    t.integer "user_id"
     t.float "latitude"
     t.float "longitude"
     t.datetime "deleted_at"

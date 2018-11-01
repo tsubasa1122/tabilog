@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  def index
+    @users = User.page(params[:page])
+    @users = @users.search(s_title: params[:s_title]) if params[:s_title].present?
+  end
+
   def show
     @user = User.find(params[:id])
     @reviews = Review.where(user_id: current_user.id)
@@ -24,8 +29,6 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to root_path
   end
-
-
 
   private
 

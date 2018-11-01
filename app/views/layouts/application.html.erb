@@ -24,6 +24,16 @@
       <nav class="header__nav">
         <ul>
           <% if user_signed_in? %>
+            <li>
+              <div class="search__user">
+                <form action="<%= users_path %>" method="get" class="form-inline">
+                  <input type="text" id="search__user" name="s_title" required size="10" placeholder=" ユーザー名かアカウント名で検索" value="<%= request[:s_title] %>">
+                  <button  class="search__user__button" type="submit">
+                    <span class="search__button__txt" ><%= image_tag "/images/search.png", alt:"" %> 検索</span>
+                  </button>
+                </form>
+              </div>
+            </li>
             <li><%= attachment_image_tag @user, :user_image,  class: "img-circle", fallback: "/images/no_image.jpg"%></li>
             <%= link_to  destroy_user_session_path ,method: :delete do %>
               <li><span class="sign-up__btn">ログアウト</span></li>
@@ -43,30 +53,33 @@
       </nav>
     </div>
     <% if user_signed_in? %>
-      <div class="menu__wrapper"></div>
+      <div class="menu__wrapper">
+      </div>
       <div class="menu__modal">
         <nav>
-          <%= link_to user_path(current_user.id) do %>
-            <li class="user__page">
-              <span class="user"><%= current_user.name %></span>
-              <span class="my__page">マイページを表示</span>
-            </li>
-          <% end %>
-          <%= link_to edit_user_path(current_user.id) do %>
-            <li>マイページの編集</li>
-          <% end %>
-          <%= link_to favorites_path do %>
-            <li>お気に入り 一覧</li>
-          <% end %>
-          <%= link_to wannagos_path do %>
-            <li>行きたい 一覧</li>
-          <% end %>
-          <%= link_to new_trip_path do %>
-            <li>旅行先登録</li>
-          <% end %>
-          <%= link_to user_path(current_user.id) ,method: :delete, data: {confirm: "本当に退会しますか？"} do %>
-            <li>退会する</li>
-          <% end %>
+          <ul>
+            <%= link_to user_path(current_user.id) do %>
+              <li class="user__page">
+                <span class="user"><%= current_user.name %></span>
+                <span class="my__page">マイページを表示</span>
+              </li>
+            <% end %>
+            <%= link_to edit_user_path(current_user.id) do %>
+              <li>マイページの編集</li>
+            <% end %>
+            <%= link_to favorites_path do %>
+              <li>お気に入り 一覧</li>
+            <% end %>
+            <%= link_to wannagos_path do %>
+              <li>行きたい 一覧</li>
+            <% end %>
+            <%= link_to new_trip_path do %>
+              <li>旅行先登録</li>
+            <% end %>
+            <%= link_to user_path(current_user.id) ,method: :delete, data: {confirm: "本当に退会しますか？"} do %>
+              <li>退会する</li>
+            <% end %>
+          </ul>
         </nav>
       </div>
     <% end %>

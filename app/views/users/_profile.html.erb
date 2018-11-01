@@ -3,8 +3,6 @@
     <div class="main__img"><%= attachment_image_tag user , :header_image %></div>
   </div>
 <% end %>
-
-
 <div class="profile-contents">
   <div class="profile-content">
     <div class="username">
@@ -21,12 +19,16 @@
     <div class="profile"><%= user.description %></div>
     <div class="follow__status">
       <div class="profile__follow">
-        <span class="follow__num"><%= link_to current_user.followers.count, tmp_path(current_user.id, "follower"), class: "my_follower forf", remote: true %></span>
-        <span class="follow__text">フォロー</span>
+        <%= link_to followings_path(user.id) do %>
+          <span class="follow__num"><%= link_to current_user.followers.count, tmp_path(current_user.id, "follower"), class: "my_follower forf", remote: true %></span>
+          <span class="follow__text">フォロー</span>
+        <% end %>
       </div>
       <div class="profile__follower">
-        <span class="follower__num"><%= link_to current_user.followed_users.count, tmp_path(current_user.id, "follow"), class: "my_follow forf", remote: true %></span>
-        <span class="follower__text">フォロワー</span>
+        <%= link_to followers_path(user.id) do %>
+          <span class="follower__num"><%= link_to current_user.followed_users.count, tmp_path(current_user.id, "follow"), class: "my_follow forf", remote: true %></span>
+          <span class="follower__text">フォロワー</span>
+        <% end %>
       </div>
     </div>
   </div>

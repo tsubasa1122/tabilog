@@ -511,6 +511,16 @@
         padding: 5px 8px;
       }
     }
+    .user__show {
+      display: flex;
+      width: 30%;
+    }
+    .fww{
+      float: right;
+      width: 70%;
+      display: inline-block;
+      text-align: -webkit-right;
+    }
   }
 }
 .follower__user img{

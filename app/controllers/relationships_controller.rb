@@ -24,4 +24,12 @@ class RelationshipsController < ApplicationController
       render partial: 'follow', locals: {forf: user.followers, a: user.name, b: params[:dotti]}
     end
   end
+
+  def followers
+
+  end
+
+  def followings
+
+  end
 end

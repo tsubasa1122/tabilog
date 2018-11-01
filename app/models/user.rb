@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  include SearchUser
 
   validates :name ,uniqueness: true
   validates :name ,length: {maximum: 36}
@@ -18,6 +19,7 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :wannagos, dependent: :destroy
+  has_many :trips, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :relationships, source: :followed
   has_many :reverse_relationships, foreign_key: "followed_id", class_name: "Relationship", dependent: :destroy

@@ -434,3 +434,17 @@ footer{
 .user{
     font-weight: bold;
 }
+.search__user {
+    margin: 0 auto!important;
+}
+#search__user {
+    width: 195px;
+    height: 25px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+.search__user__button{
+    background-color: #ffffff;
+    width: 55px;
+    padding-top: 2px;
+}

@@ -1,4 +1,3 @@
-
 <div class="trip-content">
   <section class="trip-summary">
     <div class="trip-summary__content">
@@ -57,8 +56,6 @@
       </div>
     <% end %>
   </div>
-
-
   <section class="trip-img">
     <div class="slide-box" id="my-slide">
       <% @trip_photos.each do |tp| %>
@@ -68,6 +65,9 @@
   </section>
   <section class="content">
     <h2 class="content__title"><%= @trip.place_name %>の情報</h2>
+    <% if @trip.user_id == current_user.id %>
+      <%= link_to "編集" , edit_trip_path(@trip.id) , class: "content__link" %>
+    <% end %>
     <p class="place__detail"><%= @trip.place_detail %></p>
     <dl class="content__table">
       <dt class="table__title"><%= image_tag "/images/category.png" %>カテゴリー</dt>
@@ -91,8 +91,6 @@
     </div>
   </section>
 </div>
-
-
 <script >
     handler = Gmaps.build('Google');
     handler.buildMap({ provider: { scrollwheel: false }, internal: {id: 'map'}}, function(){
@@ -197,9 +195,6 @@
             } else {
                 $('#' + e.detail[0]).addClass('heart');
             }
-            var count = $('.review').length;
-            alert("aaa");
-            $(".review__count").text(count);
         })
     })
 </script>
