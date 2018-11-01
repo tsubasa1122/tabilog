@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   post "/homes" => "home#create" ,as: "homes"
   get '/about' => "home#about"
   get '/trip/:id' => 'trips#index', as: 'trip_index'
-  resources :trips, only: [:new, :create, :show, :edit, :update, :destroy] do
-    resources :reviews, only: [ :index, :create, :destroy]
-  end
+
 
 
   devise_for :users, controllers: {
@@ -27,6 +25,9 @@ Rails.application.routes.draw do
   get '/tmp/:dareno/:dotti' => 'relationships#tmp', as: 'tmp'
   get '/follow/:id' => 'relationships#follow', as: 'follow'
   get '/count' => 'relationships#count', as: 'count'
+  resources :trips, only: [:new, :create, :show, :edit, :update, :destroy] do
+    resources :reviews, only: [ :index, :create, :destroy]
+  end
   # お気に入り非同期のroute
   get "reviews/favorite/:id" => "reviews#favorite" , as:"favorite_reviews"
   # 行きたいの非同期のroute

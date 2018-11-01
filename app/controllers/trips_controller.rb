@@ -15,6 +15,20 @@ class TripsController < ApplicationController
     end
   end
 
+  def show
+    @trip = Trip.find(params[:id])
+    @trip_photos = TripPhoto.where(trip_id:  params[:id])
+    @reviews = Review.where(trip_id: params[:id]).order(id: "DESC")
+
+    @review_photos = ReviewPhoto.where(review_id: @reviews.ids )
+    # puts @img
+    @evaluations = Evaluation.all
+    @evaluation_images = EvaluationImage.all
+    @review = Review.new
+    @review.review_photos.build
+  end
+
+
   def wannago
     trip = Trip.find(params[:id])
     if trip.wannagoed_by?(current_user)
@@ -44,19 +58,6 @@ class TripsController < ApplicationController
       tp.save
     end
     redirect_to trip_path(@trip.id)
-  end
-
-  def show
-    @trip = Trip.find(params[:id])
-    @trip_photos = TripPhoto.where(trip_id:  params[:id])
-    @reviews = Review.where(trip_id: params[:id]).order(id: "DESC")
-
-    @review_photos = ReviewPhoto.where(review_id: @reviews.ids )
-    # puts @img
-    @evaluations = Evaluation.all
-    @evaluation_images = EvaluationImage.all
-    @review = Review.new
-    @review.review_photos.build
   end
 
   def edit

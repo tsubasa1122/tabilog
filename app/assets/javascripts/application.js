@@ -57,14 +57,6 @@ $(function() {
     })
 })
 
-
-
-
-
-
-
-
-
 //メニュー表示
 
 $(function(){
@@ -80,12 +72,12 @@ $(function(){
 //お気に入りボタン
 
 $(function() {
-    $(document).on("ajax:success", ".fav", function(e) {
+    $(document).on("click", ".fav", function(e) {
         console.log(e);
-        if ($('#' + e.detail[0]).hasClass('heart')) {
-            $('#' + e.detail[0]).removeClass('heart');
+        if ($("favorite-button").hasClass('heart')) {
+            $("favorite-button").removeClass('heart');
         } else {
-            $('#' + e.detail[0]).addClass('heart');
+            $("favorite-button").addClass('heart');
         }
     })
 })

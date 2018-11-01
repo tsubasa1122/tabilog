@@ -33,6 +33,6 @@
       <% end %>
     <% end %>
     <% if review.user_id == current_user.id %>
-      <%= link_to 削除する, trip_review_path(trip.id), method: :delete, data: {confirm: "本当に退会しますか？"} %>
+      <%= link_to 削除する, trip_review_path(trip.id), method: :delete, data: {confirm: "本当に削除しますか？"} %>
     <% end %>
   </div>
