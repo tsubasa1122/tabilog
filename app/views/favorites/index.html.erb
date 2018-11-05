@@ -29,13 +29,13 @@
       <% if favorite.review.favorited_by?(current_user) %>
         <sapn class="fav__button">
           <%= link_to favorite_reviews_path(favorite.review), class: "fav", remote: true do %>
-            <i class='fa fa-heart-o <%= "#{favorite.review.id}fav" %>' >お気に入り</i>
+            <i class='fa fa-heart-o <%= "#{favorite.review.id}fav heart" %>' >お気に入り</i>
           <% end %>
         </sapn>
       <% else %>
         <sapn class="fav__button">
           <%= link_to favorite_reviews_path(favorite.review), class: "fav", remote: true do %>
-            <i class='fa fa-heart-o <%= "#{favorite.review.id}fav" %>' >お気に入り</i>
+            <i class='fa fa-heart-o <%= "#{favorite.review.id}fav heart" %>' >お気に入り</i>
           <% end %>
         </sapn>
       <% end %>
