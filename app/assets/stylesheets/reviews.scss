@@ -146,5 +146,7 @@
   z-index: 1000;
 }
 .delete a{
+  display: inline-block;
+  float: left;
   color: #2d88d9;
 }

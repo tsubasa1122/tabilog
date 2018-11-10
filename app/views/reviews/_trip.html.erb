@@ -4,10 +4,10 @@
     <%= attachment_image_tag  review.user , :user_image, class: "user__img", fallback: "/images/no_image.jpg"  %>
     <div class="user__detail">
       <p class="user__name"><%= review.user.name %></p>
-  <% end %>
       <span class="evaluation__name"><%= review.evaluation.evaluation_name %></span>
       <span class="evaluation__num"><%= attachment_image_tag review.evaluation_image, :image %></span>
     </div>
+  <% end %>
   </div>
   <div class="trip__date">
     <span class="trip__month"><%= review.month %></span>
@@ -35,5 +35,9 @@
         <i class='fa fa-heart-o <%= "#{review.id}fav" %>' >お気に入り</i>
       <% end %>
     </sapn>
+  <% end %>
+
+  <% if review.user_id == current_user.id %>
+    <span class="delete"><%= link_to "削除する", trip_review_path(review.trip_id, review.id) ,method: :delete, data: {confirm: "本当に退会しますか？"}  %></span>
   <% end %>
 </div>

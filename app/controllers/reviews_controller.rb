@@ -1,7 +1,5 @@
 class ReviewsController < ApplicationController
 
-
-
   def favorite
     review = Review.find(params[:id])
     if review.favorited_by?(current_user)
@@ -43,7 +41,7 @@ class ReviewsController < ApplicationController
   def destroy
     review = Review.find(params[:id])
     review.destroy
-    redirect_to user_path(current_user.id)
+    redirect_to trip_path(review.trip_id)
   end
 
   private

@@ -5,7 +5,7 @@
       <div class="follower__user">
         <%= link_to user_path(follower.id), class:"user__show" do %>
           <div class="user__img">
-            <%= attachment_image_tag user follower ,:user_image, fallback: "/images/no_image.jpg"  %>
+            <%= attachment_image_tag follower ,:user_image, fallback: "/images/no_image.jpg"  %>
           </div>
           <div class="user__profile">
             <p class="user__name"><%= follower.name %></p>

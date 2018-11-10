@@ -17,7 +17,7 @@
     </div>
   </section>
   <hr>
-<div class="review__wrapper"></div>
+  <div class="review__wrapper"></div>
   <div class="review-registration main-modal">
     <%= form_with(model: @review ,url: "/trips/#{@trip.id}/reviews" , remote: true) do |f| %>
       <div class="form">
@@ -91,7 +91,7 @@
     </div>
   </section>
 </div>
-<script >
+<script>
     handler = Gmaps.build('Google');
     handler.buildMap({ provider: { scrollwheel: false }, internal: {id: 'map'}}, function(){
         markers = handler.addMarkers([
@@ -170,7 +170,7 @@
             $('.review__wrapper').hide();
             $('.review__count').text($('.review').length)
         })
-        $(document).on('click', 'input[type=submit]', function() {
+        $(document).on('click', '.asdf', function() {
             if ($('.main-modal input[type=text]').val() == '') {
                 return false;
             }
