@@ -3,18 +3,20 @@
     <div class="trip-summary__content">
       <h1 class="place__title"><%= @trip.place_name %></h1>
     </div>
-    <div class="trip-summary__actions">
-      <% if @trip.wannagoed_by?(current_user) %>
-        <%= link_to wannago_trips_path(@trip), class: "wanna", remote: true do %>
-          <button class='wannago <%= "#{@trip.id}wanna" %>'<%= image_tag "/images/wannago.png" %>行きたい</button>
+    <% if user_signed_in?  %>
+      <div class="trip-summary__actions">
+        <% if @trip.wannagoed_by?(current_user) %>
+          <%= link_to wannago_trips_path(@trip), class: "wanna", remote: true do %>
+            <button class='wannago <%= "#{@trip.id}wanna" %>'<%= image_tag "/images/wannago.png" %>行きたい</button>
+          <% end %>
+        <% else %>
+          <%= link_to wannago_trips_path(@trip), class: "wanna", remote: true do  %>
+            <button class='wannago <%= "#{@trip.id}wanna" %>'<%= image_tag "/images/wannago.png" %>行きたい</button>
+          <% end %>
         <% end %>
-      <% else %>
-        <%= link_to wannago_trips_path(@trip), class: "wanna", remote: true do  %>
-          <button class='wannago <%= "#{@trip.id}wanna" %>'<%= image_tag "/images/wannago.png" %>行きたい</button>
-        <% end %>
-      <% end %>
-      <button class="contribution" id="modal-open"><%= image_tag "/images/contribution.png" %>投稿</button>
-    </div>
+        <button class="contribution" id="modal-open"><%= image_tag "/images/contribution.png" %>投稿</button>
+      </div>
+    <% end %>
   </section>
   <hr>
   <div class="review__wrapper"></div>
@@ -65,8 +67,10 @@
   </section>
   <section class="content">
     <h2 class="content__title"><%= @trip.place_name %>の情報</h2>
-    <% if @trip.user_id == current_user.id %>
-      <%= link_to "編集" , edit_trip_path(@trip.id) , class: "content__link" %>
+    <% if user_signed_in? %>
+      <% if @trip.user_id == current_user.id %>
+        <%= link_to "編集" , edit_trip_path(@trip.id) , class: "content__link" %>
+      <% end %>
     <% end %>
     <p class="place__detail"><%= @trip.place_detail %></p>
     <dl class="content__table">
